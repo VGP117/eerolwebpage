@@ -9,24 +9,30 @@
     <meta name="author" content="Eero Lehtinen">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Slab">
 </head>
 
 <body>
     <div id="topBar">
         <div id="header">
             <div id="eeroTitle">Eero Lehtinen</div>
-            <div id="pageTitle">Home</div>
+            <div id="pageTitle">
+                Lentokonepeli-X
+            </div>
+            <a id="homeLink" href="index.html">
+                <i class="material-icons">arrow_back_ios</i><span>Home</span>
+            </a>
         </div>
     </div>
     <div id="mainContent">
         <div>
-            <h1>Projects</h1>
-            <input type="text" id="searchInput" placeholder="Search...">
-
-            <ul id="projectList">
-                <li><a href="lentokonepeli.html">Lentokonepeli-X</a></li>
-            </ul>
+            <h1>Downloads</h1>
+            <div>
+                <a class="button" id="download_latest" href="https://drive.google.com/uc?export=download&id=1y87Bz6rHp0GNdVUL-WIdlPluQxWwp-6k" download>Download latest version</a>
+            </div>
+            <div>
+                <a class="button" id="download_old" href="https://drive.google.com/drive/folders/1MuyXs347eCeBzs666d0CjdWOmx0NpHEe?usp=sharing">Download older versions</a>
+            </div>
         </div>
     </div>
 
@@ -34,5 +40,5 @@
     <script src="js/index.js"></script>
     <script src="js/global.js"></script>
 </body>
-    
+
 </html>

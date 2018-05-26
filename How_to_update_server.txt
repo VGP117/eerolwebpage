@@ -1,0 +1,5 @@
+1. run sendToServer.bat
+2. type "sudo /var/movesite.sh" to server instance's bash
+
+impotant!
+sendToServer.bat must be next to www-folder

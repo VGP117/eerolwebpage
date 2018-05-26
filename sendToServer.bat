@@ -1,1 +1,1 @@
-gcloud compute scp --recurse "E:\Google Drive\EeroLWebpage\www" free-instance:~/temp
+gcloud compute scp --recurse "%~dp0\www" free-instance:~/temp
