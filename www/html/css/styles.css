@@ -1,17 +1,21 @@
-
-body {
+html, body {
     padding: 0;
     margin: 0;
     font-family: 'Roboto', sans-serif;
     background-color: #fefefe;
-    min-width: 360px;
     letter-spacing: .01em;
+    max-width: 100%;
+    height: 100%;
 }
 
 div#topBar {
-    height: 50px;
+    height: 64px;
     width: 100%;
     background-color: slateblue;
+    position: fixed;
+    display: block;
+    box-shadow: 0px 1px 12px black;
+    z-index: 10;
 }
 
 div#header {
@@ -28,7 +32,6 @@ div#pageTitle {
     width: 100%;
     text-align: center;
     position: absolute;
-    padding: 8px;
     margin: 6px;
     height: 42px;
     bottom: 0px;
@@ -37,13 +40,65 @@ div#pageTitle {
 a#homeLink {
     text-decoration: none;
     color: white;
-    margin: 4px;
+    margin: 6px;
     height: 42px;
     vertical-align: middle;
     border-radius: 2px;
     display: inline-block;
     position: absolute;
-    bottom: 0px;
+    bottom: 6px;
+}
+
+div#landing {
+    height: 500px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+div#landing div {
+    background: url(https://i.imgur.com/SQoDWiB.jpg);
+    height: 500px;
+    width: 100%;
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: 2000px 500px;
+    position: absolute;
+    z-index: 0;
+    opacity: 0.7;
+}
+
+div#landing * {
+    z-index: 1;
+}
+
+div#landing h1 {
+    font-size: 70px;
+    text-align: center;
+    margin: 0px;
+    margin-top: auto;
+}
+
+div#landing h2 {
+    color: black;
+    font-size: 26px;
+    text-align: center;
+}
+
+div#landing p {
+    color: black;
+    font-size: 18px;
+    text-align: center;
+}
+
+.slateblue {
+    color: slateblue;
+}
+
+.fLarge {
+    font-size: 90px;
 }
 
 #homeLink:hover {
@@ -55,13 +110,45 @@ a#homeLink {
     margin: 8px 0px 8px 8px;
 }
 
-
 #homeLink:active {
     background-color: white;
 }
 
 #homeLink:active * {
     color: slateblue;
+}
+
+.white {
+    color: white;
+}
+
+.f24 {
+    font-size: 24px !important;
+}
+
+.f36 {
+    font-size: 36px !important;
+}
+
+.f48 {
+    font-size: 48px !important;
+}
+
+.circleButton {
+    height: 48px;
+    width: 48px;
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0);
+    margin: auto auto 5px auto;
+    border-radius: 24px;
+}
+
+.circleButton:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+}
+
+.circleButton:active {
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
 #homeLink span {
@@ -72,11 +159,16 @@ a#homeLink {
 }
 
 #mainContent {
-    padding: 10px 20px;
+    padding: 74px 20px 50px 20px;
     margin: auto;
     width: 100%;
+    min-height: 100%;
     max-width: 920px;
     position: initial;
+}
+
+#mainContent.noHeader {
+    padding-top: 10px;
 }
 
 * {
@@ -84,7 +176,7 @@ a#homeLink {
 }
 
 #searchInput {
-    background-image: url("../images/search_24.png");
+    background-image: url("https://i.imgur.com/ydnIqAG.png");
     background-size: 24px 24px;
     background-position: 8px 8px;
     background-repeat: no-repeat;
@@ -102,13 +194,12 @@ a#homeLink {
     margin: 0;
 }
 
-#projectList li a {
-
+#projectList li {
+    position: relative;
 }
 
 #projectList li a {
-    margin-top: -1px; /* Prevent double borders */
-    padding: 30px;
+    padding: 26px;
     text-decoration: none;
     color: black;
     display: flex;
@@ -117,8 +208,32 @@ a#homeLink {
 }
 
 #projectList li a:hover {
-    background-color: #f1f1f1;
+    /*background-color: #f1f1f1;*/
 }
+
+#projectList li a:active {
+    /*background-color: #b5b5b5;*/
+}
+
+#projectList li a::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0px;
+    top: 0px;
+    background-color: black;
+    opacity: 0;
+}
+
+#projectList li a:hover::after {
+    opacity: 0.1;
+}
+
+#projectList li a:active::after {
+    opacity: 0.3;
+}
+
 
 span.listItemTitle {
     font-size: 22px;
@@ -127,9 +242,10 @@ span.listItemTitle {
 
 div.tag {
     margin: 5px 2px 5px 0px;
-    padding: 4px;
-    border: 1px solid lightgrey;
+    padding: 7px;
+    /*border: 1px solid lightgrey;*/
     border-radius: 4px;
+    background-color: #eeeeee;
     color: grey;
     font-size: 14px;
     display: inline-block;
@@ -146,7 +262,7 @@ div.tag {
 a.download {
     background-color: slateblue;
     border-radius: 6px;
-    border: 0px;
+    border: 1px solid slateblue;
     color: white;
     padding: 18px;
     font-size: 24px;
@@ -186,4 +302,5 @@ p {
     letter-spacing: .030em;
     margin: 10px 0px 15px 0px;
     color: #5f6368;
+    line-height: 1.5;
 }
