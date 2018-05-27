@@ -3,26 +3,15 @@ body {
     padding: 0;
     margin: 0;
     font-family: 'Roboto', sans-serif;
-}
-
-div#eeroTitle {
-    margin: auto;
-    width: initial;
-    text-align: center;
-    padding-top: 20px;
-    color: rgba(255, 255, 255, 0.20);
-    font-size: 60px;
+    background-color: #fefefe;
+    min-width: 360px;
+    letter-spacing: .01em;
 }
 
 div#topBar {
-    height: 200px;
+    height: 50px;
     width: 100%;
     background-color: slateblue;
-}
-
-div#topBar.sticky {
-    position: fixed;
-    top: -140px;
 }
 
 div#header {
@@ -40,7 +29,7 @@ div#pageTitle {
     text-align: center;
     position: absolute;
     padding: 8px;
-    margin: 4px;
+    margin: 6px;
     height: 42px;
     bottom: 0px;
 }
@@ -114,22 +103,39 @@ a#homeLink {
 }
 
 #projectList li a {
-    border: 1px solid #ddd;
+
+}
+
+#projectList li a {
     margin-top: -1px; /* Prevent double borders */
-    background-color: #f6f6f6;
-    padding: 50px;
+    padding: 30px;
     text-decoration: none;
-    font-size: 18px;
     color: black;
-    display: block;
-    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
-#projectList li a:hover:not(.header) {
-    background-color: #eee;
+#projectList li a:hover {
+    background-color: #f1f1f1;
 }
 
-#mainContent div {
+span.listItemTitle {
+    font-size: 22px;
+    margin: 4px 0px;
+}
+
+div.tag {
+    margin: 5px 2px 5px 0px;
+    padding: 4px;
+    border: 1px solid lightgrey;
+    border-radius: 4px;
+    color: grey;
+    font-size: 14px;
+    display: inline-block;
+}
+
+#mainContent section {
     padding: 8px 0px;
 }
 
@@ -137,7 +143,7 @@ a#homeLink {
     text-align: center;
 }
 
-a.button {
+a.download {
     background-color: slateblue;
     border-radius: 6px;
     border: 0px;
@@ -150,38 +156,34 @@ a.button {
     text-decoration: none;
 }
 
-a.button:hover {
+a.download:hover {
     background-color: #7a69e9;
 }
 
-a.button:active {
+a.download:active {
     background-color: white;
     color: slateblue;
 }
 
-a.button#download_old {
-    background-color: lightgrey;
-    border-radius: 3px;
-    border: 0px;
-    color: black;
-    padding: 8px;
-    font-size: 12px;
-}
-
-a.button#download_old:hover {
-    background-color: #cacaca;
-}
-
-a.button#download_old:active {
-    background-color: black;
-    color: lightgray;
-}
-
 h1 {
-    font-size: 24px;
-    margin: 10px 0px;
+    font-size: 30px;
+    margin: 16px 0px;
+    font-weight: 400;
 }
 
-h1, h2, h3, h4 {
-    font-weight: 700;
+h2 {
+    font-size: 18px;
+    margin: 10px 0px;
+    font-weight: 400;
+    color: slateblue;
+}
+
+section#footer {
+    color: slateblue;
+}
+
+p {
+    letter-spacing: .030em;
+    margin: 10px 0px 15px 0px;
+    color: #5f6368;
 }

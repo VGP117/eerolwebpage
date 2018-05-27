@@ -1,12 +1,12 @@
 ﻿<!DOCTYPE html>
 <html>
-
 <head>
     <title>Eero Lehtinen - Home</title>
     <meta charset="UTF-8">
     <meta name="description" content="">
-    <meta name="keywords" content="Eero Lehtinen, C++, lentokonepeli, lentokonepeli-X">
+    <meta name="keywords" content="Eero Lehtinen, Home, Projects, C++, lentokonepeli, lentokonepeli-X">
     <meta name="author" content="Eero Lehtinen">
+    <link rel="shortcut icon" href="images/icon.png">
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">
@@ -15,24 +15,57 @@
 <body>
     <div id="topBar">
         <div id="header">
-            <div id="eeroTitle">Eero Lehtinen</div>
             <div id="pageTitle">Home</div>
         </div>
     </div>
     <div id="mainContent">
-        <div>
+        <section>
             <h1>Projects</h1>
             <input type="text" id="searchInput" placeholder="Search...">
 
             <ul id="projectList">
-                <li><a href="lentokonepeli.html">Lentokonepeli-X</a></li>
+                <li>
+                    <a href="lentokonepeli.html">
+                        <span class="listItemTitle">Lentokonepeli-X</span>
+                        <div>
+                            <div class="tag">Game</div>
+                            <div class="tag">Multiplayer</div>
+                            <div class="tag">PC</div>
+                            <div class="tag">C++</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="dawdle_block.html">
+                        <span class="listItemTitle">Dawdle block</span>
+                        <div>
+                            <div class="tag">Browser extension</div>
+                            <div class="tag">Chrome/Firefox</div>
+                            <div class="tag">HTML</div>
+                            <div class="tag">CSS</div>
+                            <div class="tag">JavaScript</div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="swag-man.html">
+                        <span class="listItemTitle">Swag-man</span>
+                        <div>
+                            <div class="tag">Game</div>
+                            <div class="tag">Singleplayer</div>
+                            <div class="tag">PC/Mac/Linux</div>
+                            <div class="tag">Java</div>
+                        </div>
+                    </a>
+                </li>
             </ul>
-        </div>
+        </section>
+        <section id="footer">
+            by Eero Lehtinen
+        </section>
     </div>
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="js/index.js"></script>
-    <script src="js/global.js"></script>
 </body>
     
 </html>

@@ -4,12 +4,17 @@ $("#searchInput").on("change paste keyup", function () {
     var li = $("#projectList").children();
 
     li.each(function (index) {
-        var link = $(this).children().first();
-        if (link.html().toLowerCase().indexOf(inputVal) == -1) {
-            $(this).hide();
-        }
-        else {
-            $(this).show();
-        }
+        var li = $(this);
+        var texts = li.find(".listItemTitle, .tag");
+        texts.each(function (index) {
+            if ($(this).html().toLowerCase().indexOf(inputVal) == -1) {
+                li.hide();
+            }
+            else {
+                li.show();
+                return false; // means break in jQuery each
+            }
+        });
+        
     });
 });
