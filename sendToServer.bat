@@ -1,1 +1,0 @@
-gcloud compute scp --recurse "%~dp0\www" free-instance:~/temp

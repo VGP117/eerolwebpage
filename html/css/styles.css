@@ -8,49 +8,59 @@ html, body {
     height: 100%;
 }
 
-div#topBar {
-    height: 64px;
-    width: 100%;
-    background-color: slateblue;
-    position: fixed;
-    display: block;
-    box-shadow: 0px 1px 12px black;
-    z-index: 10;
-}
-
-div#header {
-    width: 100%;
-    max-width: 920px;
-    height: 100%;
-    margin: auto;
-    color: white;
-    position: relative;
+section#topBar {
+    border-bottom: 1px solid slateblue;
 }
 
 div#pageTitle {
     font-size: 24px;
-    width: 100%;
     text-align: center;
-    position: absolute;
-    margin: 6px;
-    height: 42px;
     bottom: 0px;
+    display: inline-block;
+    position: absolute;
+    top: 18px;
+    left: 0px;
+    color: slateblue;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    z-index: 1;
 }
 
 a#homeLink {
     text-decoration: none;
-    color: white;
-    margin: 6px;
-    height: 42px;
+    color: slateblue;
+    height: 48px;
+    width: 48px;
     vertical-align: middle;
-    border-radius: 2px;
+    border-radius: 24px;
     display: inline-block;
-    position: absolute;
-    bottom: 6px;
+    margin: 0px;
+    position: relative;
+    z-index: 2;
 }
 
+#homeLink:hover {
+    background-color: rgba(106, 90, 205, 0.1);
+}
+
+#homeLink i {
+    font-size: 24px;
+    margin: 12px 0px 12px 16px;
+}
+
+#homeLink:active {
+    background-color: rgba(106, 90, 205, 0.3);
+}
+
+section {
+    display: block;
+    position: relative;
+}
+
+
 div#landing {
-    height: 500px;
+    height: 300px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -58,16 +68,16 @@ div#landing {
 }
 
 div#landing div {
-    background: url(https://i.imgur.com/SQoDWiB.jpg);
-    height: 500px;
+    background: url(../images/mountains.jpg);
+    height: 300px;
     width: 100%;
     background-attachment: fixed;
-    background-position: top;
+    background-position: 50% -196px;
     background-repeat: no-repeat;
-    background-size: 2000px 500px;
+    background-size: 2304px 539px;
     position: absolute;
     z-index: 0;
-    opacity: 0.7;
+    opacity: 0.8;
 }
 
 div#landing * {
@@ -99,23 +109,6 @@ div#landing p {
 
 .fLarge {
     font-size: 90px;
-}
-
-#homeLink:hover {
-    background-color: rgba(255, 255, 255, 0.10);
-}
-
-#homeLink i {
-    font-size: 24px;
-    margin: 8px 0px 8px 8px;
-}
-
-#homeLink:active {
-    background-color: white;
-}
-
-#homeLink:active * {
-    color: slateblue;
 }
 
 .white {
@@ -159,7 +152,7 @@ div#landing p {
 }
 
 #mainContent {
-    padding: 74px 20px 50px 20px;
+    padding: 10px 20px 50px 20px;
     margin: auto;
     width: 100%;
     min-height: 100%;
@@ -167,16 +160,12 @@ div#landing p {
     position: initial;
 }
 
-#mainContent.noHeader {
-    padding-top: 10px;
-}
-
 * {
     box-sizing: border-box;
 }
 
 #searchInput {
-    background-image: url("https://i.imgur.com/ydnIqAG.png");
+    background-image: url("../images/search.png");
     background-size: 24px 24px;
     background-position: 8px 8px;
     background-repeat: no-repeat;
@@ -207,14 +196,6 @@ div#landing p {
     flex-direction: column;
 }
 
-#projectList li a:hover {
-    /*background-color: #f1f1f1;*/
-}
-
-#projectList li a:active {
-    /*background-color: #b5b5b5;*/
-}
-
 #projectList li a::after {
     content: "";
     position: absolute;
@@ -243,7 +224,6 @@ span.listItemTitle {
 div.tag {
     margin: 5px 2px 5px 0px;
     padding: 7px;
-    /*border: 1px solid lightgrey;*/
     border-radius: 4px;
     background-color: #eeeeee;
     color: grey;
@@ -266,19 +246,41 @@ a.download {
     color: white;
     padding: 18px;
     font-size: 24px;
-    margin: auto;
+    margin: 6px;
     display: inline-block;
     cursor: pointer;
     text-decoration: none;
 }
 
 a.download:hover {
-    background-color: #7a69e9;
+    background-color: #988ddd;
 }
 
 a.download:active {
     background-color: white;
     color: slateblue;
+}
+
+a.archive {
+    background-color: gray;
+    border-radius: 3px;
+    border: 1px solid gray;
+    color: white;
+    padding: 8px 18px;
+    font-size: 16px;
+    margin: 6px;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+a.archive:hover {
+    background-color: #adadad;
+}
+
+a.archive:active {
+    background-color: white;
+    color: grey;
 }
 
 h1 {

@@ -1,0 +1,5 @@
+NEW WAY
+run ____ToServer.ps1
+
+impotant!
+____ToServer.ps1 must be next to www-
