@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <title>Eero Lehtinen - Swag-man</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=0.85, maximum-scale=0.85, minimum-scale=.25, user-scalable=yes">
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta name="keywords" content="Eero Lehtinen, Swag-man, Java">
@@ -20,17 +20,30 @@
                 <i class="material-icons">arrow_back_ios</i>
             </a>
             <div id="pageTitle">
-                Dawdle block
+                Swag-man
             </div>
         </section>
+        
         <section>
-            <h1>Download</h1>
+            <img class="aboutImage crisp"src="images/swag-man_screenshot.webp">
+            <h1 id="About">About</h1>
+            <p>
+                The purpose of Swag-man was to imitate classic Pac-Man as closely as possible in Java and make it happen in about two weeks.
+                I recreated all the original game mechanics with the help of <a href="https://www.gamasutra.com/view/feature/132330/the_pacman_dossier.php?page=1">this Gamasutra article</a>.
+                Only feature i couldn't bring myself to do was the glitching when reaching level 256. 
+                My Swag-man continues chomping forever. 
+                At least until the level counter overflows at 2,147,483,648.
+                Also my version runs at 100 fps while the original runs at 60 fps, wich makes some bugs like passing through ghosts less likely to happen on my version.
+            </p>
+        </section>
+        <section>
+            <h1 id="Download">Download</h1>
             <div>
                 <a class="download" href="downloads/Swag-man.jar" download>PC/Mac/Linux - Download</a>
             </div>
         </section>
         <section>
-            <h1>Setup guide</h1>
+            <h1 id="Setup_guide">Setup guide</h1>
             <h2>Installing</h2>
             <p>No need to install. Everything is contained within the jar file.</p>
             <h2>"This file can harm your computer"</h2>
