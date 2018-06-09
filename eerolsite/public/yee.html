@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=0.85, maximum-scale=0.85, minimum-scale=.25, user-scalable=yes">
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="images/icon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    
+    <div id="mainContent">
+        <section>
+            <h1 id="cd" style="font-size: 40px; text-align: center;"></h1>
+            <h1 style="text-align: center;">until yee</h1>
+        </section>        
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        var target = new Date(2018, 6, 9, 16).getTime();
+    
+        printCD();
+        var interval = setInterval( printCD , 1000);
+
+        function printCD() {
+            var now = Date.now();
+            var difference = Math.max(target - now, 0);
+    
+            var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((difference % (1000 * 60)) / 1000);
+            
+            $("#cd").text(days + "d " + hours + "h " + minutes + "m " + seconds + "s");
+        }
+    </script>
+</body>
+
+</html>
