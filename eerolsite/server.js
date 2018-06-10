@@ -10,7 +10,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/*', function (req, res) {
-    res.send(404, "page " + req.path + " not found on lehtineneero.com <br> <a href=\"lehtineneero.com\">Go to home page</a>");
+    res.send(404, "page " + req.path + " not found on lehtineneero.com <br> <a href=\"https://lehtineneero.com\">Go to home page</a>");
 });
 
 var server = app.listen(8080, function () {});
