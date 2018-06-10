@@ -1,1 +1,0 @@
-﻿gcloud compute ssh --zone us-east1-b free-instance --command "sudo /var/updateSite.sh"

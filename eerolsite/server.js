@@ -9,7 +9,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/*', function (req, res) {
-    res.send(404, "not found");
+    res.send(404, req.path + "not found");
 });
 
 var server = app.listen(8080, function () {});
