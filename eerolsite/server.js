@@ -9,7 +9,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/*', function (req, res) {
-    res.send(404, "page " + req.path + " not found on " + req.hostname);
+    res.send(404, "page " + req.path + " not found on lehtineneero.com");
 });
 
 var server = app.listen(8080, function () {});
