@@ -10,7 +10,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/*', function (req, res) {
-    res.send(404, "<p style=\"line-height: 200%\">page " + req.path + " not found on lehtineneero.com <br> <a href=\"https://lehtineneero.com\">Go to home page</a></p>");
+    res.status(404).send("<p style=\"line-height: 200%\">page " + req.path + " not found on lehtineneero.com <br> <a href=\"https://lehtineneero.com\">Go to home page</a></p>");
 });
 
 var server = app.listen(8080, function () {});
