@@ -8,8 +8,8 @@ app.get('/', function (req, res) {
     res.sendFile( __dirname + "/" + "index.html" );
 });
 
-app.get('/asdf', function (req, res) {
-    res.json(null)
+app.get('/*', function (req, res) {
+    res.send(404, "not found");
 });
 
 var server = app.listen(8080, function () {});
