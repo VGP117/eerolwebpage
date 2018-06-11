@@ -1,16 +1,37 @@
 #!/usr/bin/env node
-var express = require('express');
+var express = require("express");
 var app = express();
 app.disable("trust proxy");
 
+var jsdom = require("jsdom");
+var fs = require("fs");
+
+app.listen(8080, function () {});
+
 app.use(express.static("public"));
 
-app.get('/', function (req, res) {
-    res.sendFile( __dirname + "/" + "index.html" );
+app.get("/", function (req, res) {
+    res.sendFile( __dirname + "/index.html" );
 });
 
-app.get('/*', function (req, res) {
-    res.status(404).send("<p style=\"line-height: 200%\">page " + req.path + " not found on lehtineneero.com <br> <a href=\"https://lehtineneero.com\">Go to home page</a></p>");
+
+app.get("/downloads/lentokonepeli_latest", function (req, res) {
+    if (req.query.platform != "pc") {
+        res.sendStatus(400);
+        return;
+    }
+
+    var fileNameRegex = new RegExp("^.*" + req.query.platform + "-lkp.zip$");
+    
+    fs.readdirSync(__dirname + "/public/downloads").forEach(file => {
+        if (fileNameRegex.test(file) === true) {
+            res.download(__dirname + "/public/downloads/" + file);
+        }
+    });
 });
 
-var server = app.listen(8080, function () {});
+app.get("/*", function (req, res) {
+    var dom = new jsdom.JSDOM(fs.readFileSync(__dirname + "/private/page_not_found.html"), {runScripts: "dangerously"});    
+    dom.window.document.getElementById("path").innerHTML = req.path;
+    res.status(404).send(dom.serialize());
+});
