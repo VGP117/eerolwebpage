@@ -14,7 +14,6 @@ app.get("/", function (req, res) {
     res.sendFile( __dirname + "/index.html" );
 });
 
-
 app.get("/downloads/lentokonepeli_latest", function (req, res) {
     if (req.query.platform != "pc") {
         res.sendStatus(400);
