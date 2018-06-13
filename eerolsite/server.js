@@ -29,12 +29,6 @@ app.get("/downloads/lentokonepeli_latest", function (req, res) {
     });
 });
 
-app.get("/*", function (req, res) {
-    var dom = new jsdom.JSDOM(fs.readFileSync(__dirname + "/private/page_not_found.html"), {runScripts: "dangerously"});    
-    dom.window.document.getElementById("path").innerHTML = req.path;
-    res.status(404).send(dom.serialize());
-});
-
 /*---lentokonepeli---*/
 var lkp_latestVersion = "";
 
@@ -56,3 +50,9 @@ app.get("/lkp/latest_version", function(req, res) {
 });
 
 /*------*/
+
+app.get("/*", function (req, res) {
+    var dom = new jsdom.JSDOM(fs.readFileSync(__dirname + "/private/page_not_found.html"), {runScripts: "dangerously"});    
+    dom.window.document.getElementById("path").innerHTML = req.path;
+    res.status(404).send(dom.serialize());
+});
