@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 var express = require("express");
 var app = express();
-app.disable("trust proxy");
 
 var jsdom = require("jsdom");
 var fs = require("fs");
+var jquery = require("jquery");
 
 app.listen(8080, function () {});
 
@@ -35,7 +35,7 @@ var lkp_latestVersion = "";
 lkp_init();
 
 function lkp_init() {
-    versionRegex = new RegExp("(^.*)-\\w*-lkp.zip$");
+    versionRegex = new RegExp("^v(.*)-\\w*-lkp.zip$");
 
     fs.readdirSync(__dirname + "/public/downloads").forEach(file => {
         var res = versionRegex.exec(file);
@@ -43,6 +43,14 @@ function lkp_init() {
             lkp_latestVersion = res[1];
         }
     });
+
+    // Setup labels and download links to reflect current version
+    var dom = new jsdom.JSDOM(fs.readFileSync(__dirname + "/public/lentokonepeli.html"));
+    var $ = jquery(dom.window);
+    $("#latestVersion").text("Current version: " + lkp_latestVersion);
+    $("#dl-pc").attr("href", "downloads/v" + lkp_latestVersion + "-pc-lkp.zip");
+    // add mac and linux in the future
+    fs.writeFileSync(__dirname + "/public/lentokonepeli.html", dom.serialize());
 }
 
 app.get("/lkp/latest_version", function(req, res) {
@@ -53,6 +61,7 @@ app.get("/lkp/latest_version", function(req, res) {
 
 app.get("/*", function (req, res) {
     var dom = new jsdom.JSDOM(fs.readFileSync(__dirname + "/private/page_not_found.html"), {runScripts: "dangerously"});    
-    dom.window.document.getElementById("path").innerHTML = req.path;
+    var $ = jquery(dom.window);
+    $("#path").html(req.path);
     res.status(404).send(dom.serialize());
 });

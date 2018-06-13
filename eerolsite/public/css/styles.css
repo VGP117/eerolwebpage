@@ -260,7 +260,7 @@ a.download {
     border-radius: 6px;
     border: 1px solid slateblue;
     color: white;
-    padding: 18px;
+    padding: 12px 18px;
     font-size: 24px;
     margin: 6px;
     display: inline-block;
@@ -282,7 +282,7 @@ a.archive {
     border-radius: 3px;
     border: 1px solid gray;
     color: white;
-    padding: 8px 18px;
+    padding: 6px 14px;
     font-size: 16px;
     margin: 6px;
     display: inline-block;
