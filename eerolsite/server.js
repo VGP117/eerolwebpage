@@ -34,3 +34,25 @@ app.get("/*", function (req, res) {
     dom.window.document.getElementById("path").innerHTML = req.path;
     res.status(404).send(dom.serialize());
 });
+
+/*---lentokonepeli---*/
+var lkp_latestVersion = "";
+
+lkp_init();
+
+function lkp_init() {
+    versionRegex = new RegExp("(^.*)-\\w*-lkp.zip$");
+
+    fs.readdirSync(__dirname + "/public/downloads").forEach(file => {
+        var res = versionRegex.exec(file);
+        if (res != null) {
+            lkp_latestVersion = res[1];
+        }
+    });
+}
+
+app.get("/lkp/latest_version", function(req, res) {
+    res.status(200).send(lkp_latestVersion);
+});
+
+/*------*/
