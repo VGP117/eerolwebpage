@@ -30,6 +30,7 @@ app.get("/downloads/lentokonepeli_latest", function (req, res) {
 });
 
 /*---lentokonepeli---*/
+var lkp_platforms = ["pc"]; // add mac and linux in the future
 var lkp_latestVersion = "";
 
 lkp_init();
@@ -48,13 +49,18 @@ function lkp_init() {
     var dom = new jsdom.JSDOM(fs.readFileSync(__dirname + "/public/lentokonepeli.html"));
     var $ = jquery(dom.window);
     $("#latestVersion").text("Current version: " + lkp_latestVersion);
-    $("#dl-pc").attr("href", "downloads/v" + lkp_latestVersion + "-pc-lkp.zip");
-    // add mac and linux in the future
+    lkp_platforms.forEach(platform => {
+        $("#dl-" + platform).attr("href", "downloads/v" + lkp_latestVersion + "-" + platform + "-lkp.zip");
+    });
     fs.writeFileSync(__dirname + "/public/lentokonepeli.html", dom.serialize());
 }
 
 app.get("/lkp/latest_version", function(req, res) {
     res.status(200).send(lkp_latestVersion);
+});
+
+app.get("/lkp/*", function(res, req) {
+    res.sendStatus(400);
 });
 
 /*------*/
