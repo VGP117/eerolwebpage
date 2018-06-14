@@ -59,7 +59,7 @@ app.get("/lkp/latest_version", function(req, res) {
     res.status(200).send(lkp_latestVersion);
 });
 
-app.get("/lkp/*", function(res, req) {
+app.get("/lkp/*", function(req, res) {
     res.sendStatus(400);
 });
 
