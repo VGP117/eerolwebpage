@@ -6,6 +6,7 @@ html, body {
     letter-spacing: .01em;
     max-width: 100%;
     height: 100%;
+    font-size: 16px;
 }
 
 section#topBar {
@@ -198,7 +199,7 @@ div#landing p {
     flex-direction: row;
 }
 
-#projectList li a::after {
+#projectList li a::after, a.fileItem::after {
     content: "";
     position: absolute;
     width: 100%;
@@ -209,11 +210,11 @@ div#landing p {
     opacity: 0;
 }
 
-#projectList li a:hover::after {
+#projectList li a:hover::after, a.fileItem:hover::after {
     opacity: 0.1;
 }
 
-#projectList li a:active::after {
+#projectList li a:active::after, a.fileItem:active::after {
     opacity: 0.3;
 }
 
@@ -313,10 +314,9 @@ h2 {
 }
 
 h3 {
-    font-size: 22px;
-    margin: 10px 0px;
+    font-size: 24px;
+    margin: 16px 0px;
     font-weight: 400;
-    color: darkslategray;
 }
 
 section#footer {
@@ -349,23 +349,34 @@ img.crisp {
     list-style: none;
     padding: 0px;
     margin-top: 20px;
+    display: block;
+    min-width: 400px;
 }
 
 #dlArchive ul li {
-    font-size: 16px;
-    margin: 12px 0px 12px 20px;
+    border-bottom: solid lightgrey 1px;
 }
+
+#dlArchive ul li a {
+    display: block;
+    padding: 6px 12px;
+    position: relative;
+    text-decoration: none;
+    color: black;
+}
+
+#dlArchive ul li a span {
+    margin-left: 18px;
+    position: relative;
+    color: #818181;
+    float: right;
+}
+
 
 a {
-    color: rgb(56, 64, 72);
-    text-decoration: none;
+    color: rgb(26, 26, 26);
 }
 
-a:hover {
-    text-decoration: underline;
-}
-
-a:active {
-    color: slategray;
-    text-decoration: underline;
+a:hover, a:active {
+    color: rgb(121, 121, 121);
 }

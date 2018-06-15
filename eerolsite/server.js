@@ -74,11 +74,16 @@ app.get("/*", function (req, res) {
 function createDlArchive(archive) {
     var dom = new jsdom.JSDOM(fs.readFileSync(__dirname + "/private/dl_archive.html"), {runScripts: "dangerously"});    
     var $ = jquery(dom.window);
-    $("#homeLink").attr({href: archive.homePageLink, alt: archive.homePageLinkAlt});
+    $("#backLink").attr({href: archive.homePageLink, alt: archive.homePageLinkAlt});
     $("title").html("Download archive - " + archive.name);
-    $("#pageTitle").html($("title").html());
+    $("#title").html($("title").html());
     archive.files.forEach(file => {
-         var li = $("<li>").append( $("<a>").text(file).attr({href: file, download: ""}));
+        var fileInfo = fs.statSync(__dirname + "/public/downloads/" + archive.name.toLowerCase() + "/" + file);
+        var a = $("<a>").text(file).attr({href: file, download: "", class: "fileItem"});
+        var span = $("<span>").append(fileInfo.ctime.toLocaleDateString());
+        var span2 = $("<span>").append(parseInt(fileInfo.size/1024).toLocaleString() + " KB");
+        a.append(span2).append(span);
+        var li = $("<li>").append(a);
          $("ul").append(li);
     });
     
