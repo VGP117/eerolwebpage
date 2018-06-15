@@ -75,7 +75,7 @@ function createDlArchive(archive) {
     $("title").html("Download archive - " + archive.name);
     $("#dlTitle").html($("title").html());
     archive.files.forEach(file => {
-         var li = $("<li>").append( $("<a>").text(file).attr("href", file));
+         var li = $("<li>").append( $("<a>").text(file).attr({href: file, download: ""}));
          $("ul").append(li);
     });
     
