@@ -357,5 +357,9 @@ img.crisp {
 }
 
 a {
-    color: slategrey;
+    color: rgb(56, 64, 72);
+}
+
+a:hover {
+    color: slategray;
 }
