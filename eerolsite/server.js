@@ -19,6 +19,8 @@ var lkp_platforms = ["pc"]; // add mac and linux in the future
 var lkp_latestVersion = "";
 var lkp_dlArchive = {
     name: "Lentokonepeli-X",
+    homePageLink: "../../lentokonepeli.html",
+    homePageLinkAlt: "Lentokonepeli project",
     files: []
 };
 
@@ -72,6 +74,7 @@ app.get("/*", function (req, res) {
 function createDlArchive(archive) {
     var dom = new jsdom.JSDOM(fs.readFileSync(__dirname + "/private/dl_archive.html"), {runScripts: "dangerously"});    
     var $ = jquery(dom.window);
+    $("#homeLink").attr({href: archive.homePageLink, alt: archive.homePageLinkAlt});
     $("title").html("Download archive - " + archive.name);
     $("#pageTitle").html($("title").html());
     archive.files.forEach(file => {
