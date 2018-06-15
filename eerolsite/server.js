@@ -79,5 +79,5 @@ function createDlArchive(archive) {
          $("ul").append(li);
     });
     
-    fs.writeFileSync(__dirname + "/public/downloads/" + archive.name + "/archive.html", dom.serialize());
+    fs.writeFileSync(__dirname + "/public/downloads/" + archive.name.toLowerCase() + "/archive.html", dom.serialize());
 }
