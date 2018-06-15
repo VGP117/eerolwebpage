@@ -312,6 +312,13 @@ h2 {
     color: slateblue;
 }
 
+h3 {
+    font-size: 22px;
+    margin: 10px 0px;
+    font-weight: 400;
+    color: darkslategray;
+}
+
 section#footer {
     color: slateblue;
 }
@@ -338,6 +345,17 @@ img.crisp {
     image-rendering: -moz-crisp-edges;
 }
 
-ul {
+#dlArchive ul{
     list-style: none;
+    padding: 0px;
+    margin-top: 20px;
+}
+
+#dlArchive ul li {
+    font-size: 16px;
+    margin: 12px 0px 12px 20px;
+}
+
+a {
+    color: slategrey;
 }

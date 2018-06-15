@@ -73,7 +73,7 @@ function createDlArchive(archive) {
     var dom = new jsdom.JSDOM(fs.readFileSync(__dirname + "/private/dl_archive.html"), {runScripts: "dangerously"});    
     var $ = jquery(dom.window);
     $("title").html("Download archive - " + archive.name);
-    $("#dlTitle").html($("title").html());
+    $("#pageTitle").html($("title").html());
     archive.files.forEach(file => {
          var li = $("<li>").append( $("<a>").text(file).attr({href: file, download: ""}));
          $("ul").append(li);
