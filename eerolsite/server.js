@@ -25,7 +25,7 @@ var lkp_dlArchive = {
 lkp_init();
 
 function lkp_init() {
-    var files = fs.readdirSync(__dirname + "/public/downloads/Lentokonepeli-X");
+    var files = fs.readdirSync(__dirname + "/public/downloads/lentokonepeli-x");
     var index = files.indexOf("archive.html");
     if (index > -1) {
         files.splice(index, 1);
