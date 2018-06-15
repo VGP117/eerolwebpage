@@ -14,36 +14,28 @@ app.get("/", function (req, res) {
     res.sendFile( __dirname + "/index.html" );
 });
 
-app.get("/downloads/lentokonepeli_latest", function (req, res) {
-    if (req.query.platform != "pc") {
-        res.sendStatus(400);
-        return;
-    }
-
-    var fileNameRegex = new RegExp("^.*" + req.query.platform + "-lkp.zip$");
-    
-    fs.readdirSync(__dirname + "/public/downloads").forEach(file => {
-        if (fileNameRegex.test(file) === true) {
-            res.download(__dirname + "/public/downloads/" + file);
-        }
-    });
-});
-
 /*---lentokonepeli---*/
 var lkp_platforms = ["pc"]; // add mac and linux in the future
 var lkp_latestVersion = "";
+var lkp_dlArchive = {
+    name: "Lentokonepeli-X",
+    files: []
+};
 
 lkp_init();
 
 function lkp_init() {
-    versionRegex = new RegExp("^v(.*)-\\w*-lkp.zip$");
+    var files = fs.readdirSync(__dirname + "/public/downloads/Lentokonepeli-X");
+    var index = files.indexOf("archive.html");
+    if (index > -1) {
+        files.splice(index, 1);
+    }
+    files.reverse();
+    lkp_dlArchive.files = files;
+    var res = /^v(.*)-\w*-lkp.zip$/.exec(lkp_dlArchive.files[0]);
+    lkp_latestVersion = res[1];
 
-    fs.readdirSync(__dirname + "/public/downloads").forEach(file => {
-        var res = versionRegex.exec(file);
-        if (res != null) {
-            lkp_latestVersion = res[1];
-        }
-    });
+    createDlArchive(lkp_dlArchive);
 
     // Setup labels and download links to reflect current version
     var dom = new jsdom.JSDOM(fs.readFileSync(__dirname + "/public/lentokonepeli.html"));
@@ -54,6 +46,10 @@ function lkp_init() {
     });
     fs.writeFileSync(__dirname + "/public/lentokonepeli.html", dom.serialize());
 }
+
+app.get("/downloads/lentokonepeli-x/archive", function (req, res) {
+    sendDlArchive(lkp_dlArchive, res);
+});
 
 app.get("/lkp/latest_version", function(req, res) {
     res.status(200).send(lkp_latestVersion);
@@ -71,3 +67,16 @@ app.get("/*", function (req, res) {
     $("#path").html(req.path);
     res.send(dom.serialize());
 });
+
+function createDlArchive(archive) {
+    var dom = new jsdom.JSDOM(fs.readFileSync(__dirname + "/private/dl_archive.html"), {runScripts: "dangerously"});    
+    var $ = jquery(dom.window);
+    $("title").html("Download archive - " + archive.name);
+    $("#dlTitle").html($("title").html());
+    archive.files.forEach(file => {
+         var li = $("<li>").append( $("<a>").text(file).attr("href", file));
+         $("ul").append(li);
+    });
+    
+    fs.writeFileSync(__dirname + "/public/downloads/" + archive.name + "/archive.html", dom.serialize());
+}

@@ -337,3 +337,7 @@ img.crisp {
     image-rendering: pixelated;
     image-rendering: -moz-crisp-edges;
 }
+
+ul {
+    list-style: none;
+}
