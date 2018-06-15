@@ -80,7 +80,7 @@ function createDlArchive(archive) {
     archive.files.forEach(file => {
         var fileInfo = fs.statSync(__dirname + "/public/downloads/" + archive.name.toLowerCase() + "/" + file);
         var a = $("<a>").text(file).attr({href: file, download: "", class: "fileItem"});
-        var span = $("<span>").append(fileInfo.ctime.toLocaleDateString());
+        var span = $("<span>").append(fileInfo.mtime.toLocaleDateString());
         var span2 = $("<span>").append(parseInt(fileInfo.size/1024).toLocaleString() + " KB");
         a.append(span2).append(span);
         var li = $("<li>").append(a);
