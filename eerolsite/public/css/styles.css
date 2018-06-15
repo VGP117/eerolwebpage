@@ -358,8 +358,14 @@ img.crisp {
 
 a {
     color: rgb(56, 64, 72);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 a:active {
     color: slategray;
+    text-decoration: underline;
 }
