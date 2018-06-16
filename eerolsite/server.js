@@ -6,6 +6,8 @@ const jsdom = require("jsdom");
 const fs = require("fs");
 const jquery = require("jquery");
 
+console.log("Node env: " + process.env.NODE_ENV);
+
 app.listen(8080, function () {});
 
 app.use(express.static("public"));
