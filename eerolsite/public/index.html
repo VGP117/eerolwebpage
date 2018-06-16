@@ -93,7 +93,7 @@
         </section>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="js/index.js"></script>
+    <script>$("#searchInput").on("change paste keyup",function(){var n=$(this).val().toLowerCase();$("#projectList").children().each(function(t){var e=$(this);e.find(".listItemTitle, .tag").each(function(t){if(-1!=$(this).html().toLowerCase().indexOf(n))return e.show(),!1;e.hide()})})}),$(document).on("click",'a[href^="#"]',function(t){t.preventDefault(),$("html, body").animate({scrollTop:$($.attr(this,"href")).offset().top},500)});</script>
 </body>
     
 </html>
