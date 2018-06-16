@@ -1,3 +1,5 @@
+node $PSScriptRoot/eerolsite/server_init.js
+Pause
 git add --all
 git commit
 git push origin master

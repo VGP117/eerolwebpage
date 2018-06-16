@@ -270,6 +270,7 @@ a.download {
 }
 
 a.download:hover {
+    color: white;
     background-color: #988ddd;
 }
 
@@ -293,6 +294,7 @@ a.archive {
 
 a.archive:hover {
     background-color: #adadad;
+    color: white;
 }
 
 a.archive:active {
@@ -350,8 +352,8 @@ img.crisp {
     padding: 0px;
     margin-top: 20px;
     display: block;
-    min-width: 300px;
-    max-width: 480px;
+    min-width: 380px;
+    max-width: 540px;
 }
 
 #dlArchive ul li {
@@ -367,7 +369,7 @@ img.crisp {
 }
 
 #dlArchive ul li a span {
-    margin-left: 18px;
+    margin-left: 16px;
     position: relative;
     color: #818181;
     float: right;
