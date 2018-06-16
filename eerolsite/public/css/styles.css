@@ -350,7 +350,8 @@ img.crisp {
     padding: 0px;
     margin-top: 20px;
     display: block;
-    min-width: 400px;
+    min-width: 300px;
+    max-width: 480px;
 }
 
 #dlArchive ul li {
@@ -359,7 +360,7 @@ img.crisp {
 
 #dlArchive ul li a {
     display: block;
-    padding: 6px 12px;
+    padding: 6px 16px;
     position: relative;
     text-decoration: none;
     color: black;
