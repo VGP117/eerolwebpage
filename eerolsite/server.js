@@ -11,7 +11,7 @@ app.listen(8080, function () {});
 app.use(express.static("public"));
 
 app.get("/", function (req, res) {
-    res.sendFile( __dirname + "/index.html" );
+    res.sendFile( __dirname + "/public/index.html" );
 });
 
 /*---lentokonepeli---*/
@@ -48,10 +48,6 @@ function lkp_init() {
     });
     fs.writeFileSync(__dirname + "/public/lentokonepeli.html", dom.serialize());
 }
-
-app.get("/downloads/lentokonepeli-x/archive", function (req, res) {
-    sendDlArchive(lkp_dlArchive, res);
-});
 
 app.get("/lkp/latest_version", function(req, res) {
     res.status(200).send(lkp_latestVersion);
