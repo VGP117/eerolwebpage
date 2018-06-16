@@ -1,10 +1,10 @@
 #!/usr/bin/env node
-var express = require("express");
-var app = express();
+const express = require("express");
+const app = express();
 
-var jsdom = require("jsdom");
-var fs = require("fs");
-var jquery = require("jquery");
+const jsdom = require("jsdom");
+const fs = require("fs");
+const jquery = require("jquery");
 
 app.listen(8080, function () {});
 
@@ -15,7 +15,7 @@ app.get("/", function (req, res) {
 });
 
 /*---lentokonepeli---*/
-var lkp_platforms = ["pc"]; // add mac and linux in the future
+const lkp_platforms = ["pc"]; // add mac and linux in the future
 var lkp_latestVersion = "";
 var lkp_dlArchive = {
     name: "Lentokonepeli-X",
@@ -60,8 +60,6 @@ app.get("/lkp/latest_version", function(req, res) {
 app.get("/lkp/*", function(req, res) {
     res.sendStatus(400);
 });
-
-
 /*------*/
 
 app.get("/*", function (req, res) {

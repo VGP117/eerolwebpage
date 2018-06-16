@@ -1,3 +1,2 @@
 NEW WAY
-- commit and push to origin
 - run "serverUpdate.ps1"
