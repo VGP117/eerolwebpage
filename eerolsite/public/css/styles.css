@@ -242,8 +242,8 @@ div.tag {
     margin: 5px 2px 5px 0px;
     padding: 7px;
     border-radius: 4px;
-    background-color: #eeeeee;
-    color: grey;
+    background-color: rgb(233, 233, 233);
+    color: rgb(99, 99, 99);
     font-size: 14px;
     display: inline-block;
 }
@@ -328,7 +328,7 @@ section#footer {
 p {
     letter-spacing: .030em;
     margin: 10px 0px 15px 0px;
-    color: #5f6368;
+    color: rgb(66, 66, 66);
     line-height: 1.5;
     text-align: justify;
     text-justify: inter-word;
