@@ -119,6 +119,14 @@ div#landing p {
     color: white;
 }
 
+.white:hover {
+    color: white;
+}
+
+.white:active {
+    color: white;
+}
+
 .f24 {
     font-size: 24px !important;
 }
@@ -227,8 +235,6 @@ div#landing p {
 img.thumbnail {
     float: left;
     display: block;
-    width: 64px;
-    height: 64px;
     margin: 6px 26px 6px 6px;
     flex: 0 0 auto;
 }
@@ -340,11 +346,6 @@ img.aboutImage {
     height: auto;
     margin: 14px 0px 14px 14px;
     max-width: 100%;
-}
-
-img.crisp {
-    image-rendering: pixelated;
-    image-rendering: -moz-crisp-edges;
 }
 
 #dlArchive ul{
