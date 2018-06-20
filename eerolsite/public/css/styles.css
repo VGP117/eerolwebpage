@@ -342,8 +342,6 @@ p {
 
 img.aboutImage {
     float: right;
-    width: 448px;
-    height: auto;
     margin: 14px 0px 14px 14px;
     max-width: 100%;
 }
