@@ -35,7 +35,7 @@ function lkp_init(lkp_timestamps) {
     var dom = new jsdom.JSDOM(fs.readFileSync(__dirname + "/public/lentokonepeli-x.html"));
     var $ = jquery(dom.window);
     lkp_platforms.forEach(platform => {
-        $("#dl-" + platform).attr("href", "downloads/v" + Object.keys(lkp_timestamps)[0] + "-" + platform + "-lkp.zip");
+        $("#dl-" + platform).attr("href", "downloads/lentokonepeli-x/" + Object.keys(lkp_timestamps)[0] + "-" + platform + "-lkp.zip");
     });
     fs.writeFileSync(__dirname + "/public/lentokonepeli-x.html", dom.serialize());
 }
