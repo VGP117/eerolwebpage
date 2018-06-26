@@ -351,8 +351,8 @@ img.aboutImage {
     padding: 0px;
     margin-top: 20px;
     display: block;
-    min-width: 380px;
-    max-width: 540px;
+    min-width: 360px;
+    max-width: 580px;
 }
 
 #dlArchive ul li {
@@ -360,7 +360,8 @@ img.aboutImage {
 }
 
 #dlArchive ul li a {
-    display: block;
+    display: flex;
+    justify-content: space-between;
     padding: 6px 16px;
     position: relative;
     text-decoration: none;
@@ -368,12 +369,8 @@ img.aboutImage {
 }
 
 #dlArchive ul li a span {
-    margin-left: 16px;
-    position: relative;
     color: #818181;
-    float: right;
 }
-
 
 a {
     color: rgb(26, 26, 26);

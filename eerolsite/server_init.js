@@ -61,12 +61,13 @@ function createDlArchive(archive, timestamps) {
     $("#title").html($("title").html());
     archive.files.forEach(file => {
         var fileInfo = fs.statSync(__dirname + "/public/downloads/" + archive.name.toLowerCase() + "/" + file);
-        var a = $("<a>").text(file).attr({href: file, download: "", class: "fileItem"});
+        var a = $("<a>").attr({href: file, download: "", class: "fileItem"});
+        $("<div>").text(file).appendTo(a);
         var span = $("<span>").append(numberWithSpaces(parseInt(fileInfo.size/1024)) + " KB");
         var span2 = $("<span>");
         for (var version in timestamps) {
             if (file.indexOf(version) != -1)
-                span2.append(timestamps[version]);
+                span2.text(timestamps[version]);
         }
         if (span.text() == "") {
             console.error("A version hasn't been added to project-timestamps.json");
