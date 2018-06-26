@@ -62,7 +62,7 @@ function createDlArchive(archive, timestamps) {
     archive.files.forEach(file => {
         var fileInfo = fs.statSync(__dirname + "/public/downloads/" + archive.name.toLowerCase() + "/" + file);
         var a = $("<a>").text(file).attr({href: file, download: "", class: "fileItem"});
-        var span = $("<span>").append(parseInt(fileInfo.size/1024).toLocaleString() + " KB");
+        var span = $("<span>").append(numberWithSpaces(parseInt(fileInfo.size/1024)) + " KB");
         var span2 = $("<span>");
         for (var version in timestamps) {
             if (file.indexOf(version) != -1)
@@ -78,4 +78,8 @@ function createDlArchive(archive, timestamps) {
     });
     
     fs.writeFileSync(__dirname + "/public/downloads/" + archive.name.toLowerCase() + "/archive.html", dom.serialize());
+}
+
+function numberWithSpaces(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
