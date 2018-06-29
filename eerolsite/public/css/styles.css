@@ -360,16 +360,34 @@ img.aboutImage {
 }
 
 #dlArchive ul li a {
-    display: flex;
-    justify-content: space-between;
+    display: block;
     padding: 6px 16px;
     position: relative;
     text-decoration: none;
     color: black;
 }
 
+#dlArchive ul li a div {
+    display: inline-block;
+    white-space: nowrap;
+}
+
 #dlArchive ul li a span {
     color: #818181;
+    position: absolute;
+    right: 16px;
+    top: 6px;
+}
+
+#dlArchive ul li a span:nth-child(3) {
+    display: none;
+    right: 116px;
+}
+
+@media only screen and (min-width: 420px) {
+    #dlArchive ul li a span:nth-child(3) {
+        display: inline-block;
+    }
 }
 
 a {
@@ -379,3 +397,4 @@ a {
 a:hover, a:active {
     color: rgb(121, 121, 121);
 }
+
