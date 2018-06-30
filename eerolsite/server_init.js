@@ -28,7 +28,7 @@ function lkp_init(lkp_timestamps) {
     files.reverse();
     lkp_dlArchive.files = files;
 
-    createDlArchive(lkp_dlArchive, lkp_timestamps);
+    //createDlArchive(lkp_dlArchive, lkp_timestamps);
 
     // Setup labels and download links to reflect current version
 
@@ -42,7 +42,7 @@ function lkp_init(lkp_timestamps) {
 
 function applyTimeStampsToSites(timestamps) {
     for (var project in timestamps) {
-        var dom = new jsdom.JSDOM(fs.readFileSync(__dirname + "/public/" + project.toLowerCase() + ".html"), {runScripts: "dangerously"});    
+        var dom = new jsdom.JSDOM(fs.readFileSync(__dirname + "/public/" + project.toLowerCase() + ".html"));
         var $ = jquery(dom.window);
         var latest_version = Object.keys(timestamps[project])[0];
 
@@ -54,7 +54,7 @@ function applyTimeStampsToSites(timestamps) {
 }
 
 function createDlArchive(archive, timestamps) {
-    var dom = new jsdom.JSDOM(fs.readFileSync(__dirname + "/private/dl_archive.html"), {runScripts: "dangerously"});    
+    var dom = new jsdom.JSDOM(fs.readFileSync(__dirname + "/private/dl_archive.html"));    
     var $ = jquery(dom.window);
     $("#backLink").attr({href: archive.homePageLink, alt: archive.homePageLinkAlt});
     $("title").html("Download archive - " + archive.name);
