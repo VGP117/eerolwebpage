@@ -403,7 +403,7 @@ img.aboutImage {
 
 #dlArchive ul li a {
     display: block;
-    padding: 6px 16px 6px 16px;
+    padding: 6px 16px 6px 36px;
     position: relative;
     text-decoration: none;
     color: black;
@@ -421,7 +421,7 @@ img.aboutImage {
     font-size: 24px;
     position: absolute;
     top: 4px;
-    right: 6px;
+    left: 6px;
 }
 
 #dlArchive ul li a:hover div::before {
@@ -431,16 +431,16 @@ img.aboutImage {
 #dlArchive ul li a span {
     color: #818181;
     position: absolute;
-    right: 36px;
+    right: 16px;
     top: 6px;
 }
 
 #dlArchive ul li a span:nth-child(3) {
     display: none;
-    right: 146px;
+    right: 126px;
 }
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 460px) {
     #dlArchive ul li a span:nth-child(3) {
         display: inline-block;
     }
