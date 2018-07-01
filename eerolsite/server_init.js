@@ -28,7 +28,7 @@ function lkp_init(lkp_timestamps) {
     files.reverse();
     lkp_dlArchive.files = files;
 
-    //createDlArchive(lkp_dlArchive, lkp_timestamps);
+    createDlArchive(lkp_dlArchive, lkp_timestamps);
 
     // Setup labels and download links to reflect current version
 
