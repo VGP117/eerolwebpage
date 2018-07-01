@@ -230,6 +230,7 @@ div#landing p {
     display: inline-flex;
     justify-content: center;
     flex-direction: column;
+    max-width: calc(100% - 96px);
 }
 
 img.thumbnail {
@@ -244,14 +245,21 @@ span.listItemTitle {
     margin: 4px 0px;
 }
 
+div.tagList {
+    display: flex;
+    overflow: hidden;
+    max-height: 43px;
+}
+
 div.tag {
-    margin: 5px 2px 5px 0px;
+    margin: 5px 6px 5px 0px;
     padding: 7px;
     border-radius: 4px;
     background-color: rgb(233, 233, 233);
     color: rgb(99, 99, 99);
     font-size: 16px;
     display: inline-block;
+    white-space: nowrap;
 }
 
 #mainContent section {
