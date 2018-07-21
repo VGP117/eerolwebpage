@@ -18,17 +18,15 @@
 
 <body>
     <div id="landing">
-        <div></div>
         <h1>I'm Eero</h1>
         <h2>I create computer things</h2>
-        <p>eero@lehtineneero.com</p>
-        <a class="circleButton white" href="#Projects" alt="Go to projects"><i class="material-icons f48">keyboard_arrow_down</i></a>
+        <p class="email white">eero@lehtineneero.com</p>
+        <a class="button about m30" href="aboutme.html" alt="Info about the owner of this site">About me</a>
+        <a class="scrollDown button white" href="#Projects" alt="Scroll down to projects">View my projects</a>
     </div>
     <div id="mainContent" class="hasLanding">
         <section>
             <h1 id="Projects">Projects</h1>
-            <input type="text" id="searchInput" placeholder="Search...">
-
             <ul id="projectList">
                 <li>
                     <a href="lentokonepeli-x.html" alt="Project Lentokonepeli-X">
@@ -96,7 +94,9 @@
         </section>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>$("#searchInput").on("change paste keyup",function(){var n=$(this).val().toLowerCase();$("#projectList").children().each(function(t){var e=$(this);e.find(".listItemTitle, .tag").each(function(t){if(-1!=$(this).html().toLowerCase().indexOf(n))return e.show(),!1;e.hide()})})}),$(document).on("click",'a[href^="#"]',function(t){t.preventDefault(),$("html, body").animate({scrollTop:$($.attr(this,"href")).offset().top},500)});</script>
+    <script>
+ $(document).on("click",'a[href^="#"]',function(t){t.preventDefault(),$("html, body").animate({scrollTop:$($.attr(this,"href")).offset().top},600)});
+    </script>
 </body>
     
 </html>
