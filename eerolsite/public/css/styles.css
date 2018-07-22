@@ -132,7 +132,7 @@ div#landing p {
 }
 
 #projectList li a {
-    padding: 4px;
+    padding: 10px 4px;
     text-decoration: none;
     color: black;
     display: flex;
