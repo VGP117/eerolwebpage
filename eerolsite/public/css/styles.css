@@ -299,6 +299,8 @@ a.scrollDown {
     padding: 12px 0px;
     border-radius: 10px;
     border: none;
+    left: 50%;
+    margin-left: -75px;
 }
 a.scrollDown:active {
     background-color: white;
@@ -307,9 +309,9 @@ a.scrollDown:active {
 a.scrollDown::before {
     content: "keyboard_arrow_down";
     font-size: 60px;
-    top: auto;
-    bottom: 0px;
+    top: 30px;
     left: 44px;
+    transform: translateY(-50%);
     transform: none;
 }
 a.scrollDown:active::before {
