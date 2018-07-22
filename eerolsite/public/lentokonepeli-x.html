@@ -24,8 +24,20 @@
                 Lentokonepeli-X
             </div>
         </section>
-        <section style="display: none">
-            <img class="aboutImage" width="100%" src="images/swag-man_screenshot.png" alt="Swag-man in-game screenshot">
+        <section>
+            <a class="image" target="blank_" href="images/lkp_0.9.1-alpha_screenshot.jpg" alt="Lentokonepeli-X in-game screenshot">
+                <img width="400" src="images/lkp_0.9.1-alpha_screenshot.jpg" alt="Lentokonepeli-X in-game screenshot"><br>
+                <span>Click to zoom</span>
+            </a>
+            <h1>About</h1>
+            <p>
+                A multiplayer arena shooter with planes in C++. 
+                Contains a lot of interesting programming concepts. 
+                I had to create a whole engine for game logic like creating game objects, applying velocity and detecting collisions. 
+                Also I have to make all the networking by myself. I have to make sure that all players are synced as well as possible. 
+                Not an easy task. 
+                Thankfully I’m using <a href="https://www.sfml-dev.org/">the SFML library</a>, which can handle rendering and audio for me.
+            </p>
         </section>
         <section>
             <h1>Download</h1>
@@ -55,6 +67,12 @@
             by Eero Lehtinen
         </section>
     </div>
+    <div id="imageViewer"></div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script>$("a[download]").on("click",function(){gtag("event","download",{event_label:$(this).attr("href").replace("downloads/","")})});</script>
+    <script>
+        $("a[download]").on("click",function(){gtag("event","download",{event_label:$(this).attr("href").replace("downloads/","")})});
+    </script>
+    <script>
+        $("a.image").on("click",function(i){i.preventDefault();var e=$("div#imageViewer");e.children("img").remove(),e.show();var n=$(this).children("img").first().clone();e.append(n),e.animate({opacity:1},200)}),$("div#imageViewer").on("click",function(i){$(this).animate({opacity:0},50,function(){$(this).hide()})});
+    </script>
 </body></html>
