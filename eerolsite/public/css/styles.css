@@ -80,7 +80,7 @@ div#landing * {
 div#landing h1 {
     font-size: 70px;
     text-align: center;
-    margin: 20px;
+    margin: 0px auto 20px auto;
 }
 
 div#landing h2 {
@@ -107,7 +107,7 @@ div#landing p {
 }
 
 #mainContent {
-    padding: 10px 20px 50px 20px;
+    padding: 10px 10px 50px 10px;
     margin: auto;
     width: 100%;
     min-height: 100%;
@@ -132,7 +132,7 @@ div#landing p {
 }
 
 #projectList li a {
-    padding: 30px;
+    padding: 4px;
     text-decoration: none;
     color: black;
     display: flex;
@@ -162,34 +162,32 @@ div#landing p {
     display: inline-flex;
     justify-content: center;
     flex-direction: column;
-    max-width: calc(100% - 96px);
+    max-width: calc(100% - 76px);
 }
 
 img.thumbnail {
     float: left;
     display: block;
-    margin: 6px 26px 6px 6px;
-    flex: 0 0 auto;
+    margin: 12px 8px 12px 8px;
 }
 
 span.listItemTitle {
-    font-size: 22px;
-    margin: 4px 0px;
+    font-size: 18px;
+    margin: 10px 0px 0px 0px;
 }
 
 div.tagList {
     display: flex;
-    overflow: hidden;
-    max-height: 43px;
+    flex-wrap: wrap;
 }
 
 div.tag {
-    margin: 5px 6px 5px 0px;
-    padding: 7px;
+    margin: 2px 3px 2px 0px;
+    padding: 3px;
     border-radius: 4px;
     background-color: rgb(233, 233, 233);
     color: rgb(99, 99, 99);
-    font-size: 16px;
+    font-size: 14px;
     display: inline-block;
     white-space: nowrap;
 }
@@ -463,9 +461,41 @@ div#imageViewer img{
     right: 126px;
 }
 
-@media only screen and (min-width: 460px) {
+@media only screen and (min-width: 420px) {
     #dlArchive ul li a span:nth-child(3) {
         display: inline-block;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    #projectList li a {
+        padding: 30px;
+    }
+    span.listItemTitle {
+        font-size: 22px;
+        margin: 4px 0px;
+    }
+
+    div.tagList {
+        flex-wrap: nowrap;
+        max-height: 43px;
+    }
+    div.tag {
+        margin: 5px 6px 5px 0px;
+        padding: 7px;
+        border-radius: 4px;
+        font-size: 16px;
+    }
+
+    img.thumbnail {
+        margin: 6px 26px 6px 6px;
+    }
+
+    #projectList li a div.flex-column {
+        display: inline-flex;
+        justify-content: center;
+        flex-direction: column;
+        max-width: calc(100% - 96px);
     }
 }
 
