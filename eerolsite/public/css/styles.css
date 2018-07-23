@@ -242,7 +242,7 @@ a.button {
 }
 a.button:hover {
     color: white;
-    background-color: #988ddd;
+    background-color: #887ad7;
 }
 a.button:active {
     background-color: white;
@@ -296,12 +296,13 @@ a.archive::before {
 
 /* ABOUT BUTTON */
 a.about {
-    border-color: white;
+    border-color: transparent;
     display: initial;
     margin: 8px 0px 4px 0px;
+    background-color: #786ad2;
 }
 a.about:hover {
-    background-color: #988ddd;
+    background-color: #887ad7;
 }
 a.about:active {
     background-color: white;
@@ -313,33 +314,44 @@ a.about::before {
 
 /* SCROLL DOWN BUTTON*/
 a.scrollDown {
-    height: 90px;
-    width: 150px;
-    background-color: rgba(255, 255, 255, 0);
+    height: 60px;
+    width: 60px;
     position: absolute;
     text-align: center;
-    font-size: 16px;
+    font-size: 60px;
     bottom: 0px;
-    padding: 12px 0px;
-    border-radius: 10px;
+    padding: 0px;
+    border-radius: 30px;
     border: none;
     left: 50%;
-    margin-left: -75px;
+    margin-left: -30px;
+    background-color: #786ad2;
+}
+a.scrollDown i {
+    position: absolute;
+    top: 52%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
 }
 a.scrollDown:active {
     background-color: white;
+}
+a.scrollDown:active i {
     color: slateblue !important;
 }
 a.scrollDown::before {
-    content: "keyboard_arrow_down";
-    font-size: 60px;
-    top: 30px;
-    left: 44px;
-    transform: translateY(-50%);
-    transform: none;
-}
-a.scrollDown:active::before {
-    color: slateblue !important;
+    display: block;
+    font-family: 'Roboto', sans-serif;
+    content: "View my projects";
+    font-size: 16px;
+    top: -14px;
+    left: 30px;
+    text-align: center;
+    width: 200px;
+    height: 20px;
+    margin-left: -100px;
+    pointer-events: none;
 }
 
 h1 {
