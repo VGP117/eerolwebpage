@@ -228,7 +228,7 @@ section#topBar {
 
 
 a.button {
-    border-radius: 6px;
+    border-radius: 10px;
     border: 1px solid slateblue;
     background-color: slateblue;
     color: white;
@@ -259,7 +259,7 @@ a.button::before {
 }
 
 a.button.small {
-    border-radius: 3px;
+    border-radius: 5px;
     padding: 8px 14px 8px 42px;
     font-size: 16px;
 }
@@ -322,7 +322,7 @@ a.scrollDown {
     bottom: 0px;
     padding: 12px 0px;
     border-radius: 10px;
-    border: 1px solid white;
+    border: none;
     left: 50%;
     margin-left: -75px;
 }
@@ -525,7 +525,7 @@ div#imageViewer img{
         margin: 6px;
     }
     div#landing div {
-        padding: 100px 0px 0px 0px;
+        padding: 100px 0px 50px 0px;
     }
 
     a.about {
