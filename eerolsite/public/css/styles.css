@@ -64,12 +64,9 @@ section {
 div#landing {
     height: 100%;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
     position: relative;
     background-color: slateblue;
+    background-size: 100% 100%;
 }
 
 div#landing * {
@@ -77,23 +74,47 @@ div#landing * {
     color: white;
 }
 
-div#landing h1 {
-    font-size: 70px;
-    text-align: center;
-    margin: 0px auto 20px auto;
+div#landing div {
+    width: 100%;
+    height: calc(100% - 102px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0px;
 }
 
-div#landing h2 {
+div#landing div div.landingFlexItem {
+    width: 100%;
+    margin: 14px;
+    padding: 0px 0px;
+    justify-content: center;
+}
+
+div.landingFlexItem h1 {
+    font-size: 78px;
+    text-align: center;
+    margin: 5px 0px 5px 0px;
+}
+
+div.landingFlexItem h2 {
     font-size: 26px;
     text-align: center;
-    margin: 10px 0px 20px 0px;
+    margin: 5px 0px 0px 0px;
 }
 
-div#landing p {
-    font-size: 18px;
+div.landingFlexItem h3 {
+    font-size: 20px;
     text-align: center;
-    margin: 20px;
+    margin: 5px;
 }
+
+div.landingFlexItem p {
+    font-size: 16px;
+    text-align: center;
+    margin: 4px;
+}
+
 
 .slateblue {
     color: slateblue;
@@ -277,6 +298,7 @@ a.archive::before {
 a.about {
     border-color: white;
     display: initial;
+    margin: 8px 0px 4px 0px;
 }
 a.about:hover {
     background-color: #988ddd;
@@ -300,7 +322,7 @@ a.scrollDown {
     bottom: 0px;
     padding: 12px 0px;
     border-radius: 10px;
-    border: none;
+    border: 1px solid white;
     left: 50%;
     margin-left: -75px;
 }
@@ -490,12 +512,24 @@ div#imageViewer img{
     img.thumbnail {
         margin: 6px 26px 6px 6px;
     }
+    div.landingFlexItem h1 {
+        margin: 20px 0px 10px 0px;
+    }
+    div.landingFlexItem h2 {
+        margin: 10px 0px;
+    }
+    div.landingFlexItem h3 {
+        margin: 10px;
+    }
+    div.landingFlexItem p {
+        margin: 6px;
+    }
+    div#landing div {
+        padding: 100px 0px 0px 0px;
+    }
 
-    #projectList li a div.flex-column {
-        display: inline-flex;
-        justify-content: center;
-        flex-direction: column;
-        max-width: calc(100% - 96px);
+    a.about {
+        margin: 30px;
     }
 }
 
@@ -505,6 +539,10 @@ a {
 
 a:hover, a:active {
     color: rgb(121, 121, 121);
+}
+
+p.email {
+    font-size: 18px !important;
 }
 
 p.email::before {
@@ -578,9 +616,5 @@ p.email::before {
 
 .f60 {
     font-size: 60px !important;
-}
-
-.m30 {
-    margin: 30px !important;
 }
 
