@@ -103,9 +103,8 @@
             by Eero Lehtinen
         </section>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
- $(document).on("click",'a[href^="#"]',function(t){t.preventDefault(),$("html, body").animate({scrollTop:$($.attr(this,"href")).offset().top},600)});
+ document.getElementById("scrollToProjects").addEventListener("click",function(e){e.preventDefault(),window.scrollTo({behavior:"smooth",top:window.innerHeight})});
     </script>
 </body>
     
