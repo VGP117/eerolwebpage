@@ -81,6 +81,7 @@ function createDlArchive(archive, timestamps) {
     fs.writeFileSync(__dirname + "/public/downloads/" + archive.name.toLowerCase() + "/archive.html", dom.serialize());
 }
 
+// Create finnish-style number strings
 function numberWithSpaces(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }

@@ -25,7 +25,7 @@
         <section>
             <img width="405" class="aboutImage" src="images/me_grad.jpg" alt="Image of me after graduating from lukio">
             <p class="floatClear">
-                My name is Eero Lehtinen. I'm <span id="age">an 18</span> year old Finnish man passionately interested in creating software. 
+                My name is Eero Lehtinen. I'm <span id="age">(enable js)</span> year old Finnish man passionately interested in creating software. 
                 As a tiny kid I was baffled how computers could know only using electric signals where the mouse is or in which order to show pixels.
                 I wanted to find out.
             </p>
@@ -57,9 +57,8 @@
         <section id="footer">
             by Eero Lehtinen
         </section>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script>
-            var now=new Date,birthDate=new Date(1999,9,15),age=Math.floor((now-birthDate)/315576e5),article="a ";(18===age||age>=80&&age<=89)&&(article="an "),$("#age").text(article+age.toString());
+            var now=new Date,birthDate=new Date(1999,9,15),age=Math.floor((now-birthDate)/315576e5),article="a ";(18===age||age>=80&&age<=89)&&(article="an "),document.getElementById("age").innerHTML=article+age.toString();
         </script>
     </div>
 </body></html>

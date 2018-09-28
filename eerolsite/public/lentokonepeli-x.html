@@ -69,11 +69,10 @@
         </section>
     </div>
     <div id="imageViewer"></div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
-        $("a[download]").on("click",function(){gtag("event","download",{event_label:$(this).attr("href").replace("downloads/","")})});
+        var links=document.querySelectorAll("a[download]");links.forEach(function(e){e.addEventListener("click",function(){gtag("event","download",{event_label:this.getAttribute("href").replace("downloads/","")})})});
     </script>
     <script>
-        $("a.image").on("click",function(i){i.preventDefault();var e=$("div#imageViewer");e.children("img").remove(),e.show();var n=$(this).children("img").first().clone();e.append(n),e.animate({opacity:1},200)}),$("div#imageViewer").on("click",function(i){$(this).animate({opacity:0},50,function(){$(this).hide()})});
+        var links=document.querySelectorAll("a.image");links.forEach(function(e){e.addEventListener("click",function(e){e.preventDefault();for(var i=document.getElementById("imageViewer");i.firstChild;)i.removeChild(i.firstChild);var t=this.getElementsByTagName("img")[0];i.appendChild(t.cloneNode()),i.className="show",i.addEventListener("click",function(){this.className=""})})});
     </script>
 </body></html>

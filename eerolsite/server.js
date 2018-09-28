@@ -31,6 +31,7 @@ app.get("/lkp/*", function(req, res) {
 });
 /*------*/
 
+// requested path not in public folder or /lkp
 app.get("/*", function (req, res) {
     var dom = new jsdom.JSDOM(fs.readFileSync(__dirname + "/private/page_not_found.html"), {runScripts: "dangerously"});    
     var $ = jquery(dom.window);

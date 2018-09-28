@@ -1,7 +1,7 @@
-$(document).on('click', 'a[href^="#"]', function (event) {
-    event.preventDefault();
-
-    $('html, body').animate({
-        scrollTop: $($.attr(this, 'href')).offset().top
-    }, 600);
+document.getElementById("scrollToProjects").addEventListener("click", function(e) {
+    e.preventDefault();
+    window.scrollTo({
+        behavior : "smooth",
+        top : window.innerHeight
+    });
 });

@@ -5,4 +5,4 @@ var article = "a ";
 if (age === 18 || (age >= 80 && age <= 89)) {
     article = "an ";
 }
-$("#age").text(article + age.toString());
+document.getElementById("age").innerHTML = article + age.toString();

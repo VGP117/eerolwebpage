@@ -25,6 +25,7 @@
         </section>
     </div>
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script>$("a[download]").on("click",function(){gtag("event","download",{event_label:$(this).attr("href").replace("downloads/","")})});</script>
+<script>
+var links=document.querySelectorAll("a[download]");links.forEach(function(e){e.addEventListener("click",function(){gtag("event","download",{event_label:this.getAttribute("href").replace("downloads/","")})})});
+</script>
 </html>

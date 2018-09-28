@@ -21,7 +21,6 @@
             <h1 style="text-align: center;">until yee</h1>
         </section>        
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
         var target = new Date(2018, 6, 9, 16).getTime();
     
@@ -37,7 +36,7 @@
             var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
             var seconds = Math.floor((difference % (1000 * 60)) / 1000);
             
-            $("#cd").text(days + "d " + hours + "h " + minutes + "m " + seconds + "s");
+            document.getElementById("cd").text(days + "d " + hours + "h " + minutes + "m " + seconds + "s");
         }
     </script>
 </body>
