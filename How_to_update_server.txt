@@ -1,2 +1,4 @@
 NEW WAY
 - run "serverUpdate.ps1"
+
+NEWER WAY - just push to master, server updates itself
