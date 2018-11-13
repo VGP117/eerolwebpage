@@ -1,1 +1,1 @@
-NEWER WAY - just push to master, server updates itself
+NEWER WAY - run server_init locally, then just push to master, server updates itself
