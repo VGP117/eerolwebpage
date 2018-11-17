@@ -74,45 +74,54 @@ div#landing * {
     color: white;
 }
 
-div#landing div {
+div#landing > div {
     width: 100%;
     height: calc(100% - 102px);
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    flex-flow: column nowrap;
+    justify-content: space-evenly;
     padding: 0px;
 }
 
-div#landing div div.landingFlexItem {
-    width: 100%;
-    margin: 14px;
-    padding: 0px 0px;
-    justify-content: center;
+div.landingContainer {
+    display: block;
 }
 
-div.landingFlexItem h1 {
-    font-size: 78px;
+div.landingContainer > a, 
+div.landingContainer > img,
+div.landingContainer > p.email {
+    margin: 0 0 0 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+}
+
+div.landingContainer img {
+    width: 120px;
+    height: 120px;
+}
+
+div.landingContainer h1 {
+    font-size: 50px;
     text-align: center;
     margin: 5px 0px 5px 0px;
 }
 
-div.landingFlexItem h2 {
-    font-size: 26px;
+div.landingContainer h2 {
+    font-size: 22px;
     text-align: center;
     margin: 5px 0px 0px 0px;
 }
 
-div.landingFlexItem h3 {
+div.landingContainer h3 {
     font-size: 20px;
     text-align: center;
     margin: 5px;
 }
 
-div.landingFlexItem p {
+div.landingContainer p {
     font-size: 16px;
     text-align: center;
-    margin: 4px;
+    margin: 6px;
 }
 
 
@@ -530,20 +539,25 @@ div#imageViewer img{
     img.thumbnail {
         margin: 6px 26px 6px 6px;
     }
-    div.landingFlexItem h1 {
+    div.landingContainer h1 {
+        font-size: 78px;
         margin: 20px 0px 10px 0px;
     }
-    div.landingFlexItem h2 {
+    div.landingContainer h2 {
+        font-size: 26px;
         margin: 10px 0px;
     }
-    div.landingFlexItem h3 {
+    div.landingContainer h3 {
+        font-size: 18px;
         margin: 10px;
     }
-    div.landingFlexItem p {
-        margin: 6px;
+    div.landingContainer p {
+        font-size: 18px;
+        margin: 4px;
     }
-    div#landing div {
-        padding: 100px 0px 50px 0px;
+    div.landingContainer img {
+        width: 200px;
+        height: 200px;
     }
 
     a.about {
@@ -559,19 +573,21 @@ a:hover, a:active {
     color: rgb(121, 121, 121);
 }
 
-p.email {
-    font-size: 18px !important;
-}
 
 p.email::before {
     letter-spacing: 0;
-    font-family: "Material Icons";
     content: "mail_outline";
-    color: rgb(66, 66, 66);
-    font-size: 24px;
-    position: relative;
-    padding-right: 6px;
-    top: 6px;
+    font-size: 26px;
+    font-family: "Material Icons";
+    position: absolute;
+    top: 45%;
+    left: 20px;
+    transform: translateY(-50%);
+}
+
+p.email {
+    font-size: 18px !important;
+    padding: 12px 18px 18px 52px
 }
 
 .floatClear:before, h1:before {
@@ -635,4 +651,3 @@ p.email::before {
 .f60 {
     font-size: 60px !important;
 }
-
