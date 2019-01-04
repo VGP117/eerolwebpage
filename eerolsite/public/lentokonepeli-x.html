@@ -70,9 +70,9 @@
     </div>
     <div id="imageViewer"></div>
     <script>
-        var links=document.querySelectorAll("a[download]");links.forEach(function(e){e.addEventListener("click",function(){gtag("event","download",{event_label:this.getAttribute("href").replace("downloads/","")})})});
+    var e=document.querySelectorAll("a[download]");e.forEach(function(e){e.addEventListener("click",function(){gtag("event","download",{event_label:this.getAttribute("href").replace("downloads/","")})})});
     </script>
     <script>
-        var links=document.querySelectorAll("a.image");links.forEach(function(e){e.addEventListener("click",function(e){e.preventDefault();for(var i=document.getElementById("imageViewer");i.firstChild;)i.removeChild(i.firstChild);var t=this.getElementsByTagName("img")[0];i.appendChild(t.cloneNode()),i.className="show",i.addEventListener("click",function(){this.className=""})})});
+    var e=document.querySelectorAll("a.image");e.forEach(function(e){e.addEventListener("click",function(e){e.preventDefault();for(var t=document.getElementById("imageViewer");t.firstChild;)t.removeChild(t.firstChild);var i=this.getElementsByTagName("img")[0];t.appendChild(i.cloneNode()),t.className="show",t.addEventListener("click",function(){this.className=""})})});
     </script>
 </body></html>

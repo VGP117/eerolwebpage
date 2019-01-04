@@ -105,7 +105,7 @@
         </section>
     </div>
     <script>
- document.getElementById("scrollToProjects").addEventListener("click",function(e){e.preventDefault(),window.scrollTo({behavior:"smooth",top:window.innerHeight}),window.scrollTo(0, window.innerHeight)});
+function n(n,t){var e=window.scrollY;function o(i=0){var c=i/t;c=Math.min(c=c*c*c*(c*(6*c-15)+10),1),window.scrollTo(0,e+c*(n-e)),1!=c&&setTimeout(function(){o(i+16)},16)}o()}document.getElementById("scrollToProjects").addEventListener("click",function(t){t.preventDefault(),n(window.innerHeight,500)});
     </script>
 </body>
     
