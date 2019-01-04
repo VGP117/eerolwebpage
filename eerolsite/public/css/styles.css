@@ -651,3 +651,12 @@ p.email {
 .f60 {
     font-size: 60px !important;
 }
+
+html.icons-not-ready p.email::before,
+html.icons-not-ready a.button::before,
+html.icons-not-ready #dlArchive #title::before,
+html.icons-not-ready #dlArchive ul li a div::before,
+html.icons-not-ready .material-icons,
+{
+    display: none !important /*don't show icons if they are not ready*/
+}
