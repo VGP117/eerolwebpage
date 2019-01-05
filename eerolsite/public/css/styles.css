@@ -29,30 +29,34 @@ div#pageTitle {
 }
 
 a#homeLink {
-    text-decoration: none;
-    color: slateblue;
     height: 52px;
     width: 52px;
     vertical-align: middle;
     border-radius: 26px;
     display: inline-block;
     margin: 0px;
+    padding: 8px 0px 0px 8px;
     position: relative;
     z-index: 2;
+    border: 0;
+    
 }
 
 #homeLink:hover {
-    background-color: rgba(106, 90, 205, 0.1);
+    background-color: #e1def5;
 }
-#homeLink i {
-    font-size: 36px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translateX(-30%) translateY(-50%);
-}
+
 #homeLink:active {
-    background-color: rgba(106, 90, 205, 0.3);
+    background-color: #b4ace6;
+}
+
+.hasIcon::before {
+    content: "";
+    position: absolute;
+    display: inline-block;
+    transform: scale(.5);
+    top: 0;
+    left: 10px;
 }
 
 section {
@@ -238,7 +242,7 @@ section#topBar {
 
 a.button {
     border-radius: 10px;
-    border: 1px solid slateblue;
+    border: 0;
     background-color: slateblue;
     color: white;
     padding: 12px 18px 12px 52px;
@@ -251,20 +255,16 @@ a.button {
 }
 a.button:hover {
     color: white;
-    background-color: #887ad7;
+    background-color: #877ad7;
 }
 a.button:active {
-    background-color: white;
-    color: slateblue;
+    color: white;
+    background-color: #b4ace6;
 }
+
 a.button::before {
-    letter-spacing: 0;
-    font-family: "Material Icons";
-    font-size: 36px;
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
+    top: -11px;
+    left: -6px;
 }
 
 a.button.small {
@@ -273,17 +273,18 @@ a.button.small {
     font-size: 16px;
 }
 a.button.small::before {
-    font-size: 24px;
+    top: -8px;
+    left: 0px;
 }
 
 /* LINK BUTTON */
 a.link::before {
-    content: "link";
+    content: url(../images/ic_link_white_36pt_2x.png);
 }
 
 /* DOWNLOAD BUTTON */
 a.download::before {
-    content: "get_app";
+    content: url(../images/ic_file_download_white_36pt_2x.png);
 }
 
 /* ARCHIVE BUTTON */
@@ -300,7 +301,7 @@ a.archive:active {
     color: grey;
 }
 a.archive::before {
-    content: "folder";
+    content: url(../images/ic_folder_white_24pt_2x.png);
 }
 
 /* ABOUT BUTTON */
@@ -314,11 +315,11 @@ a.about:hover {
     background-color: #887ad7;
 }
 a.about:active {
-    background-color: white;
-    color: slateblue !important;
+    background-color: #b4ace6;
+    color: white !important;
 }
 a.about::before {
-    content: "person";
+    content: url(../images/ic_person_white_72pt.png);
 }
 
 /* SCROLL DOWN BUTTON*/
@@ -327,40 +328,29 @@ a.scrollDown {
     width: 60px;
     position: absolute;
     text-align: center;
-    font-size: 60px;
     bottom: 0px;
-    padding: 0px;
+    padding: 6px 0px 0px 0px;
     border-radius: 30px;
     border: none;
     left: 50%;
     margin-left: -30px;
     background-color: #786ad2;
 }
-a.scrollDown i {
-    position: absolute;
-    top: 52%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-}
 a.scrollDown:active {
-    background-color: white;
+    background-color: #b4ace6;
 }
-a.scrollDown:active i {
-    color: slateblue !important;
-}
-a.scrollDown::before {
+
+span.scrollDownTooltip {
     display: block;
     font-family: 'Roboto', sans-serif;
     content: "View my projects";
-    font-size: 16px;
-    top: -14px;
-    left: 30px;
     text-align: center;
     width: 200px;
     height: 20px;
     margin-left: -100px;
-    pointer-events: none;
+    bottom: 72px;
+    left: 50%;
+    position: absolute;
 }
 
 h1 {
@@ -455,14 +445,14 @@ div#imageViewer img{
     max-width: 580px;
 }
 
-#dlArchive #title::before{
-    letter-spacing: 0;
-    font-family: "Material Icons";
-    font-size: 36px;
-    content: "folder_open";
-    position: relative;
-    padding-right: 10px;
-    top: 8px;
+#dlArchive #title {
+    padding: 20px 0px 0px 70px;
+}
+
+#dlArchive #title::before {
+    content: url(../images/ic_folder_open_48pt_2x.png);
+    top: 24px;
+    left: -12px;
 }
 
 
@@ -484,18 +474,15 @@ div#imageViewer img{
 }
 
 #dlArchive ul li a div::before {
-    letter-spacing: 0;
-    font-family: "Material Icons";
-    content: "get_app";
-    color: lightgrey;
-    font-size: 24px;
-    position: absolute;
-    top: 4px;
-    left: 6px;
+    content: url(../images/ic_file_download_white_36pt_2x.png);
+    filter: brightness(0.83);
+    top: -21px;
+    left: -16px;
+    transform: scale(calc(1/3));
 }
 
 #dlArchive ul li a:hover div::before {
-    color: grey;
+    filter: brightness(0.5);
 }
 
 #dlArchive ul li a span {
@@ -575,14 +562,7 @@ a:hover, a:active {
 
 
 p.email::before {
-    letter-spacing: 0;
-    content: "mail_outline";
-    font-size: 26px;
-    font-family: "Material Icons";
-    position: absolute;
-    top: 45%;
-    left: 20px;
-    transform: translateY(-50%);
+    content: url(../images/ic_mail_outline_white_24pt_2x.png);
 }
 
 p.email {
@@ -628,35 +608,6 @@ p.email {
     visibility: visible;
 }
 
-.fLarge {
-    font-size: 90px;
-}
-
 .white, .white:hover, .white:active, .white::before {
     color: white !important;
-}
-
-.f24 {
-    font-size: 24px !important;
-}
-
-.f36 {
-    font-size: 36px !important;
-}
-
-.f48 {
-    font-size: 48px !important;
-}
-
-.f60 {
-    font-size: 60px !important;
-}
-
-html.icons-not-ready p.email::before,
-html.icons-not-ready a.button::before,
-html.icons-not-ready #dlArchive #title::before,
-html.icons-not-ready #dlArchive ul li a div::before,
-html.icons-not-ready .material-icons,
-{
-    display: none !important /*don't show icons if they are not ready*/
 }

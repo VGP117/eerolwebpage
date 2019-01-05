@@ -62,7 +62,7 @@ function createDlArchive(archive, timestamps) {
     archive.files.forEach(file => {
         var fileInfo = fs.statSync(__dirname + "/public/downloads/" + archive.name.toLowerCase() + "/" + file);
         var a = $("<a>").attr({href: file, download: "", class: "fileItem"});
-        $("<div>").text(file).appendTo(a);
+        $("<div class='hasIcon'></div>").text(file).appendTo(a);
         var span = $("<span>").append(numberWithSpaces(parseInt(fileInfo.size/1024)) + " KB");
         var span2 = $("<span>");
         for (var version in timestamps) {

@@ -1,6 +1,6 @@
 document.getElementById("scrollToProjects").addEventListener("click", function(e) {
     e.preventDefault();
-    smoothScrollWindow(window.innerHeight, 500);
+    smoothScrollWindow(window.innerHeight, 600);
 });
 /**
  * 

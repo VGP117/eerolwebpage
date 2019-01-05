@@ -1,5 +1,5 @@
 ﻿<!DOCTYPE html>
-<html lang="en" class="icons-not-ready">
+<html lang="en">
 <head>
     <title>Eero Lehtinen - Computer programmer</title>
     <meta name="theme-color" content="#6a5acd">
@@ -10,7 +10,7 @@
     <meta name="keywords" content="Programmer, Lentokonepeli-X">
     <link rel="shortcut icon" href="images/icon.png">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" onload="document.getElementsByTagName('html')[0].classList.remove('icons-not-ready');">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" onload="document.getElementsByTagName('html')[0].classList.add('icons-ready');">
     <link rel="stylesheet" href="css/styles.min.css">
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-61281940-2"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-61281940-2");</script>
 </head>
@@ -22,8 +22,8 @@
                 <img class="profile" width="200" height="200" src="images/profile_circle.png">
                 <h1>I'm Eero</h1>
                 <h2>I create software solutions</h2>
-                <p class="email white">eero@lehtineneero.com</p>
-                <a class="button about" href="aboutme.html" alt="Info about the owner of this site">About me</a>
+                <p class="email white hasIcon">eero@lehtineneero.com</p>
+                <a class="button about hasIcon" href="aboutme.html" alt="Info about the owner of this site">About me</a>
             </div>
             <div class="landingContainer">
                 <h3>I'm familiar with:</h3>
@@ -31,7 +31,8 @@
                 <p style="opacity: 0.6;">Programs: <em>VS Community, VS Code, Photoshop, Eclipse IDE, Unity Editor and Blender</em></p>
             </div>
         </div>
-        <a id="scrollToProjects" class="scrollDown button white" href="#Projects" alt="Scroll down to projects"><i class="material-icons f60">keyboard_arrow_down</i></a>
+        <span class="scrollDownTooltip">View my projects</span>
+        <a id="scrollToProjects" class="scrollDown button white" href="#Projects" alt="Scroll down to projects"><img src="images/ic_keyboard_arrow_down_white_54pt_2x.png" width="54" height="54"></a>
     </div>
     <div id="mainContent" class="hasLanding">
         <section>
