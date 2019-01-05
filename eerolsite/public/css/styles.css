@@ -10,6 +10,7 @@ html, body {
     font-weight: 400;
     box-sizing: content-box;
     font-feature-settings: "liga" 1;
+    overflow-x: hidden;
 }
 
 div#pageTitle {
