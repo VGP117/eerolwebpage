@@ -9,6 +9,7 @@ function init() {
 
     lkp_init(timestamps["Lentokonepeli-X"]);
     applyTimeStampsToSites(timestamps);
+    //insertInlineJS();
 }
 
 function lkp_init(lkp_timestamps) {
@@ -85,3 +86,61 @@ function createDlArchive(archive, timestamps) {
 function numberWithSpaces(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ");
 }
+
+/**
+ * replace script links in html with inline js if the file size is small enough,
+ * to reduce unnesessary http requests
+ *  */ 
+function insertInlineJS() {
+    var allFiles = walkSync(__dirname + "/public");
+    for (var i = 0; i < allFiles.length; i++) {
+        if (allFiles[i].endsWith(".html")) {
+            var file = fs.readFileSync(allFiles[i]);
+            var dom = new jsdom.JSDOM(file);    
+            var $ = jquery(dom.window);
+
+            var inlineScripts = $("script[id]");
+            inlineScripts.each(function(index) {
+                var src = $(this).attr("id");
+                var jsFileName = src.split("/").slice(-1).pop(); // get stuff after last "/", is js filename
+                
+                // if filesize of js file larger than 500 bytes, change from inline to external
+                if (fs.statSync(__dirname + "/public/js/" + jsFileName).size > 0) {
+                    var newScriptTag = $("<script>").attr({defer: "", src: src});
+                    $(this).replaceWith(newScriptTag); 
+                }
+            });
+            var externalScripts = $("script:not([id])");
+            externalScripts.each(function(index) {
+                var src = $(this).attr("src");
+                    var jsFileName = src.split("/").slice(-1).pop(); // get stuff after last "/", is js filename
+                    
+                    // if filesize of js file smaller than 500 bytes, change from external to inline
+                    if (fs.statSync(__dirname + "/public/js/" + jsFileName).size < 100000) {
+                        var newScriptTag = $("<script>").attr({id: src}); // Save src as id if we later want to change
+                        newScriptTag.html(fs.readFileSync(__dirname + "/public/js/" + jsFileName)); // move js file to tag content
+                        $(this).replaceWith(newScriptTag);
+                    }
+            });
+
+            fs.writeFileSync(allFiles[i]+ "1", dom.serialize());
+        }
+    }
+}
+
+// List all files in a directory recursively in a synchronous fashion
+function walkSync(dir, filelist) {
+    var path = path || require('path');
+    var fs = fs || require('fs'),
+        files = fs.readdirSync(dir);
+    filelist = filelist || [];
+    files.forEach(function(file) {
+        if (fs.statSync(path.join(dir, file)).isDirectory()) {
+            filelist = walkSync(path.join(dir, file), filelist);
+        }
+        else {
+            filelist.push(path.join(dir, file));
+        }
+    });
+    return filelist;
+};

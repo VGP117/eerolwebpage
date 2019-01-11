@@ -4,9 +4,9 @@
   "description": "Runs personal website and some lentokonepeli queries",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.16.3",
+    "express": "^4.16.4",
     "jquery": "^3.3.1",
-    "jsdom": "^11.11.0"
+    "jsdom": "^11.12.0"
   },
   "devDependencies": {},
   "scripts": {
