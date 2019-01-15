@@ -7,8 +7,14 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Init",
-            "program": "${workspaceFolder}/eerolsite/server_init.js"
+            "name": "Build",
+            "program": "${workspaceFolder}/build_site.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Server",
+            "program": "${workspaceFolder}/build/server.js"
         }
     ]
 }
