@@ -1,1 +1,1 @@
-NEWER WAY - run server_init locally, then just push to master, server updates itself
+NEWER WAY - run build_site.js locally, then just push to master, server updates itself

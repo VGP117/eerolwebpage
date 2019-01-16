@@ -6,8 +6,56 @@ const jsdom = require("jsdom");
 const fs = require("fs");
 const jquery = require("jquery");
 const path = require("path");
+const os = require("os");
 
 app.listen(8080, function () {});
+
+
+
+
+/** Monitor the amount of downloads from this server
+ * eg. downloading /downloads/lentokonepeli-x/pc-lkp.zip increments json
+ * => 
+ * { "lentokonepeli-x": { "pc-lkp.zip": 1 } }
+ * */
+app.get("/downloads/*", (req, res, next) => {
+    fs.exists(__dirname + "/public" + req.url, exists => {
+        if (exists) {
+            fs.readFile(os.homedir() + "/siteDlCount.json", (err, data) => {
+                if (!err || err.code == "ENOENT") {
+                    if (data == undefined) { // If there is no file (err.code == ENOENT), make a new one
+                        data = "{}";
+                    }
+                    var json = JSON.parse(data);
+                    var path = req.url.slice(11).split("/");
+
+                    for (var i = 0; i < path.length; i++) {
+                        if (i == path.length - 1) {
+                            if (!Object.keys(json).includes(path[i])) {
+                                json[path[i]] = 0; // if key doesn't exist, create it 
+                            }
+                            json[path[i]] = ++json[path[i]]; // Increment value when reaching last part of path
+                        }
+                        else {
+                            if (!Object.keys(json).includes(path[i])) {
+                                json[path[i]] = {}; // if key doesn't exist, create it 
+                            }
+                            json = json[path[i]]; // Traslate through path if not in destination
+                        }
+                    }
+
+                    fs.writeFile(os.homedir() + "/siteDlCount.json", JSON.stringify(json), err => {
+                        if (err) console.err("Couldn't save dlCount json: " + err.message);
+                    });
+                }
+                else {
+                    console.log("Can't load dlCount json: " + err.message);
+                }
+            });
+        }
+    });
+    next()
+});
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/images", express.static(path.join(__dirname, "../images")));

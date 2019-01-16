@@ -15,6 +15,12 @@
             "request": "launch",
             "name": "Server",
             "program": "${workspaceFolder}/build/server.js"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Source Server",
+            "program": "${workspaceFolder}/source/server.js"
         }
     ]
 }
