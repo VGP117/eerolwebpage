@@ -14,10 +14,10 @@ html, body {
 div#pageTitle {
     font-size: 34px;
     text-align: center;
-    bottom: 0px;
+    bottom: 0px; 
     display: inline-block;
     position: absolute;
-    top: 48%;
+    top: 48%;  
     transform: translateY(-50%);
     left: 0px;
     color: slateblue;

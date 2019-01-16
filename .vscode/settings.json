@@ -4,5 +4,15 @@
             "toplevel": true
         },
         "compress": true
-      }
+    },
+    "es6-css-minify.css": {
+        "level": {
+            "1": {
+                "all": true
+            },
+            "2": {
+                "all": true
+            }
+        }
+    }
 }
