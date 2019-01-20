@@ -19,7 +19,7 @@
                 <img class="profile" width="200" height="200" src="images/profile_circle.jpg">
                 <h1>I'm Eero</h1>
                 <h2>I create software solutions</h2>
-                <p class="email white hasIcon">eero@eerolehtinen.net</p>
+                <a id="email" href="mailto:eero@eerolehtinen.net" class="email white hasIcon">eero@eerolehtinen.net</a>
                 <a class="button about hasIcon" href="aboutme.html" alt="Info about the owner of this site">About me</a>
             </div>
             <div class="landingContainer">
@@ -29,7 +29,7 @@
             </div>
         </div>
         <span class="scrollDownTooltip">View my projects</span>
-        <a id="scrollToProjects" class="scrollDown button white" href="#Projects" alt="Scroll down to projects"><img src="images/ic_keyboard_arrow_down_white_54pt_2x.png" width="54" height="54"></a>
+        <a class="scrollDown button white" href="#Projects" alt="Scroll down to projects"><img src="images/ic_keyboard_arrow_down_white_54pt_2x.png" width="54" height="54"></a>
     </div>
     <div id="mainContent" class="hasLanding">
         <section>
@@ -103,4 +103,4 @@
     </div>
 
     
-<script>function n(n,e){var i=window.scrollY,o=null;window.requestAnimationFrame(function t(r){o||(o=r);var l=(r-o)/e;l=l*l*l*(l*(6*l-15)+10);l=Math.min(l,1);window.scrollTo(0,i+l*(n-i));1!=l&&window.requestAnimationFrame(t)})}document.getElementById("scrollToProjects").addEventListener("click",function(e){e.preventDefault(),n(window.innerHeight,500)});</script></body></html>
+<script>function n(n,e){var i=window.scrollY,o=null;window.requestAnimationFrame(function t(l){o||(o=l);var r=(l-o)/e;r=r*r*r*(r*(6*r-15)+10);r=Math.min(r,1);window.scrollTo(0,i+r*(n-i));1!=r&&window.requestAnimationFrame(t)})}document.getElementsByClassName("scrollDown")[0].addEventListener("click",e=>{e.preventDefault(),n(window.innerHeight,500)});</script></body></html>
