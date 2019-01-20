@@ -97,8 +97,8 @@ div.landingContainer {
 
 div.landingContainer > a, 
 div.landingContainer > img,
-div.landingContainer > p.email {
-    margin: 0 0 0 50%;
+div.landingContainer > a.email {
+    margin-left: 50%;
     transform: translateX(-50%);
     display: inline-block;
 }
@@ -551,7 +551,7 @@ div#imageViewer img{
     }
 
     a.about {
-        margin: 30px;
+        margin: 28px;
     }
 }
 
@@ -564,13 +564,17 @@ a:hover, a:active {
 }
 
 
-p.email::before {
+a.email::before {
     content: url(../images/ic_mail_outline_white_24pt_2x.png);
+    top: -10px;
+    left: -6px;
 }
 
-p.email {
+a.email {
     font-size: 18px !important;
-    padding: 12px 18px 18px 52px
+    padding: 4px 4px 4px 36px;
+    margin: 12px 0 0 0;
+    text-decoration: none;
 }
 
 .floatClear:before, h1:before {
@@ -588,27 +592,34 @@ p.email {
     line-height: 1.2;
 }
 
-.tooltip .tooltiptext {
-    visibility: hidden;
+.tooltiptext {
     white-space: nowrap;
-    background-color: lightgrey;
-    color: black;
+    background-color: grey;
+    color: white;
     text-align: center;
-    padding: 4px 4px;
-    border-radius: 3px;
-    border: 1px solid grey;
+    padding: 8px;
+    border-radius: 4px;
 
     position: absolute;
-    display: block;
+    display: inline-block;
     z-index: 1;
 
     top: 24px;
     left: 0px;
+
+    transform: scale(0.9);
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition: opacity 0.075s ease-in-out, transform 0.075s step-end; 
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip:hover .tooltiptext {
-    visibility: visible;
+    transform: scale(1);
+    opacity: 1;
+    transition: transform 0.15s ease-out, opacity 0.15s ease-out;
 }
 
 .white, .white:hover, .white:active, .white::before {
