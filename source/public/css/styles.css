@@ -588,8 +588,9 @@ a.email {
 .tooltip {
     position: relative;
     display: inline-block;
-    border-bottom: 1px dotted rgb(66, 66, 66);
-    line-height: 1.2;
+    text-decoration: underline;
+    padding: 0 6px;
+    margin: 0 -6px;
 }
 
 .tooltiptext {
