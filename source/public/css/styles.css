@@ -74,7 +74,7 @@ div#landing {
     position: relative;
     background-color: slateblue;
     background-size: 100% 100%;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 div#landing * {
