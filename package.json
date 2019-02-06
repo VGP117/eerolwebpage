@@ -4,7 +4,6 @@
   "description": "Runs personal website and some lentokonepeli queries",
   "main": "server.js",
   "dependencies": {
-    "base64url": "^3.0.1",
     "express": "^4.16.4",
     "fs-extra": "^7.0.1",
     "jquery": "^3.3.1",
