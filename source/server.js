@@ -3,15 +3,12 @@ const express = require("express");
 const app = express();
 
 const jsdom = require("jsdom");
-const fs = require("fs");
+const fs = require("fs-extra");
 const jquery = require("jquery");
 const path = require("path");
 const os = require("os");
 
 app.listen(8080, function () {});
-
-
-
 
 /** Monitor the amount of downloads from this server
  * eg. downloading /downloads/lentokonepeli-x/pc-lkp.zip increments json
@@ -20,45 +17,14 @@ app.listen(8080, function () {});
  * */
 app.get("/downloads/*", (req, res, next) => {
     fs.exists(__dirname + "/public" + req.url, exists => {
-        if (exists) {
-            fs.readFile(os.homedir() + "/siteDlCount.json", (err, data) => {
-                if (!err || err.code == "ENOENT") {
-                    if (data == undefined) { // If there is no file (err.code == ENOENT), make a new one
-                        data = "{}";
-                    }
-                    var json = JSON.parse(data);
-                    var path = req.url.slice(11).split("/");
-
-                    for (var i = 0; i < path.length; i++) {
-                        if (i == path.length - 1) {
-                            if (!Object.keys(json).includes(path[i])) {
-                                json[path[i]] = 0; // if key doesn't exist, create it 
-                            }
-                            json[path[i]] = ++json[path[i]]; // Increment value when reaching last part of path
-                        }
-                        else {
-                            if (!Object.keys(json).includes(path[i])) {
-                                json[path[i]] = {}; // if key doesn't exist, create it 
-                            }
-                            json = json[path[i]]; // Traslate through path if not in destination
-                        }
-                    }
-
-                    fs.writeFile(os.homedir() + "/siteDlCount.json", JSON.stringify(json), err => {
-                        if (err) console.err("Couldn't save dlCount json: " + err.message);
-                    });
-                }
-                else {
-                    console.log("Can't load dlCount json: " + err.message);
-                }
-            });
-        }
+        if (exists) incrementDlCountJson(req.url);
     });
     next()
 });
 
 app.use(express.static(path.join(__dirname, "public")));
 app.use("/images", express.static(path.join(__dirname, "../images")));
+app.use("/downloads", express.static(path.join(__dirname, "../downloads")));
 
 app.get("/", function (req, res) {
     res.sendFile( __dirname + "/public/index.html" );
@@ -88,3 +54,41 @@ app.get("/*", function (req, res) {
     $("#path").html(req.path);
     res.status(404).send(dom.serialize());
 });
+
+
+var dlCountCache = {};
+
+/** Increment cache and update local json file
+ * @param {String} reqUrl
+ */
+function incrementDlCountJson(reqUrl) {
+    if (dlCountCache = {}) { // Cache is empty => fetch saved file
+        var dlCountCache = fs.readJsonSync(os.homedir() + "/siteDlCount.json", {throws: false});
+
+        if (dlCountCache == undefined) { // File is empty => leave cache to empty
+            dlCountCache = {};
+        }
+    }
+
+    var path = reqUrl.slice(11).split("/"); // remove "/downloads/" and split the remainder 
+
+    for (var i = 0; i < path.length; i++) {
+        if (i == path.length - 1) {
+            if (!Object.keys(dlCountCache).includes(path[i])) {
+                dlCountCache[path[i]] = 0; // if key doesn't exist, create it 
+            }
+            dlCountCache[path[i]] = ++dlCountCache[path[i]]; // Increment value when reaching last part of path
+        }
+        else {
+            if (!Object.keys(dlCountCache).includes(path[i])) {
+                dlCountCache[path[i]] = {}; // if key doesn't exist, create it 
+            }
+            dlCountCache = dlCountCache[path[i]]; // Traslate through path if not in destination
+        }
+    }
+
+    fs.writeJson(os.homedir() + "/siteDlCount.json", dlCountCache, err => {
+        if (err) console.err("Couldn't save dlCount json: " + err.message);
+    });
+}
+
