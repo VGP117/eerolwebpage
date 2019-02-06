@@ -5,7 +5,7 @@ const app = express();
 const jsdom = require("jsdom");
 const fs = require("fs-extra");
 const jquery = require("jquery");
-const path = require("path");
+const path = require("path").posix;
 const os = require("os");
 
 app.listen(8080, function () {});
@@ -34,7 +34,7 @@ app.get("/", function (req, res) {
 var lkp_latestVersion = "";
 lkp_setLatestVersion();
 function lkp_setLatestVersion() {
-    var lkp_stamps = JSON.parse(fs.readFileSync(__dirname + "/private/project-timestamps.json", 'utf8'))["Lentokonepeli-X"];
+    var lkp_stamps = fs.readJsonSync(path.join(__dirname, "../source/private/project-timestamps.json"), 'utf8')["Lentokonepeli-X"];
     lkp_latestVersion = Object.keys(lkp_stamps)[0];
 }
 
