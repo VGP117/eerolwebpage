@@ -13,40 +13,34 @@ function init() {
     fs.ensureDirSync(__dirname + "/build/private");
     fs.moveSync(__dirname + "/build", __dirname + "/temp");
 
-    var allFiles = walkSync(__dirname + "/source");
-    
     fs.copySync(__dirname + "/source/server.js", __dirname + "/build/server.js");
 
-    var htmlFiles = [];
-    for (var filePath of allFiles) {
-        // First copy HTML files
+    // First copy HTML files
+    for (var filePath of walkSync(__dirname + "/source")) {
         if (filePath.endsWith(".html")) {
             var fileDest = filePath.replace("source", "build");
             fs.copySync(filePath, fileDest);
-            htmlFiles.push(fileDest);
         }
     }
 
+    var timestamps = fs.readJsonSync(__dirname + "/source/private/project-timestamps.json", 'utf8');
+    lkp_init(timestamps["Lentokonepeli-X"]);
+
+    applyTimeStampsToSites(timestamps);
+
     // Then modify html files and copy js and css (applying cache busting when applicable)
     var usedResources = {sourcePaths: [], newPaths: []};
-    for (var htmlFile of htmlFiles) {
-        var file = fs.readFileSync(htmlFile);
-        var dom = new jsdom.JSDOM(file); 
+    for (var htmlFile of walkSync(__dirname + "/build")) {
+        if (htmlFile.endsWith(".html")) {
+            var file = fs.readFileSync(htmlFile);
+            var dom = new jsdom.JSDOM(file); 
 
-        insertInlineJS(dom);
-        updateUsedResourcePaths(dom, usedResources); // this also copies used js and css resources
+            insertInlineJS(dom);
+            updateUsedResourcePaths(dom, usedResources); // this also copies used js and css resources
 
-        fs.writeFileSync(htmlFile, dom.serialize());
+            fs.writeFileSync(htmlFile, dom.serialize());
+        }
     }
-
-
-    console.log(usedResources.sourcePaths);
-    console.log(usedResources.newPaths);
-
-    // var timestamps = JSON.parse(fs.readJsonSync(__dirname + "/build/private/project-timestamps.json", 'utf8'));
-
-    // lkp_init(timestamps["Lentokonepeli-X"]);
-    // applyTimeStampsToSites(timestamps);
 
     // We are done, remove useless temp
     fs.removeSync(__dirname + "/temp");
@@ -65,16 +59,12 @@ function lkp_init(lkp_timestamps) {
     var lkp_platforms = ["pc"]; // add mac and linux in the future
     var lkp_dlArchive = {
         name: "Lentokonepeli-X",
-        homePageLink: "../../lentokonepeli-x.html",
+        homePageLink: "../lentokonepeli-x.html",
         homePageLinkAlt: "Lentokonepeli project",
         files: []
     };
 
-    var files = fs.readdirSync(__dirname + "/build/public/downloads/lentokonepeli-x");
-    var index = files.indexOf("archive.html");
-    if (index > -1) {
-        files.splice(index, 1);
-    }
+    var files = fs.readdirSync(__dirname + "/downloads/lentokonepeli-x");
     files.reverse();
     lkp_dlArchive.files = files;
 
@@ -82,7 +72,7 @@ function lkp_init(lkp_timestamps) {
 
     // Setup labels and download links to reflect current version
 
-    var dom = new jsdom.JSDOM(fs.readFileSync(__dirname + "/build/public/lentokonepeli-x.html"));
+    var dom = new jsdom.JSDOM(fs.readFileSync(__dirname + "/source/public/lentokonepeli-x.html"));
     var $ = jquery(dom.window);
     lkp_platforms.forEach(platform => {
         $("#dl-" + platform).attr("href", "downloads/lentokonepeli-x/v" + Object.keys(lkp_timestamps)[0] + "-" + platform + "-lkp.zip");
@@ -115,8 +105,8 @@ function createDlArchive(archive, timestamps) {
     $("title").html("Download archive - " + archive.name);
     $("#title").html($("title").html());
     archive.files.forEach(file => {
-        var fileInfo = fs.statSync(__dirname + "/build/public/downloads/" + archive.name.toLowerCase() + "/" + file);
-        var a = $("<a>").attr({href: file, download: "", class: "fileItem"});
+        var fileInfo = fs.statSync(__dirname + "/downloads/" + archive.name.toLowerCase() + "/" + file);
+        var a = $("<a>").attr({href: `../downloads/${archive.name.toLowerCase()}/${file}`, download: "", class: "fileItem"});
         $("<div class='hasIcon'></div>").text(file).appendTo(a);
         var span = $("<span>").append(numberWithSpaces(parseInt(fileInfo.size/1024)) + " KB");
         var span2 = $("<span>");
@@ -132,8 +122,9 @@ function createDlArchive(archive, timestamps) {
         var li = $("<li>").append(a);
          $("ul").append(li);
     });
-    
-    fs.writeFileSync(__dirname + "/build/public/downloads/" + archive.name.toLowerCase() + "/archive.html", dom.serialize());
+
+    fs.ensureDir(`${__dirname}/build/public/archives/`);
+    fs.writeFileSync(`${__dirname}/build/public/archives/${archive.name.toLowerCase()}_archive.html`, dom.serialize());
 }
 
 // Create finnish-style number strings
