@@ -30,15 +30,16 @@ function init() {
 
     // Then modify html files and copy js and css (applying cache busting when applicable)
     var usedResources = {sourcePaths: [], newPaths: []};
-    for (var htmlFile of walkSync(__dirname + "/build")) {
-        if (htmlFile.endsWith(".html")) {
-            var file = fs.readFileSync(htmlFile);
-            var dom = new jsdom.JSDOM(file); 
+    for (var filePath of walkSync(__dirname + "/build")) {
+        // only html files and not google verification file
+        if (filePath.endsWith(".html") && !path.basename(filePath).startsWith("google")) {
+            var content = fs.readFileSync(filePath);
+            var dom = new jsdom.JSDOM(content); 
 
             insertInlineJS(dom);
             updateUsedResourcePaths(dom, usedResources); // this also copies used js and css resources
 
-            fs.writeFileSync(htmlFile, dom.serialize());
+            fs.writeFileSync(filePath, dom.serialize());
         }
     }
 
