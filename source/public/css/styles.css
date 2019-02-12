@@ -93,14 +93,7 @@ div#landing > div {
 
 div.landingContainer {
     display: block;
-}
-
-div.landingContainer > a, 
-div.landingContainer > img,
-div.landingContainer > a.email {
-    margin-left: 50%;
-    transform: translateX(-50%);
-    display: inline-block;
+    text-align: center;
 }
 
 div.landingContainer img {
@@ -110,19 +103,16 @@ div.landingContainer img {
 
 div.landingContainer h1 {
     font-size: 50px;
-    text-align: center;
     margin: 5px 0px 5px 0px;
 }
 
 div.landingContainer h2 {
     font-size: 22px;
-    text-align: center;
     margin: 5px 0px 0px 0px;
 }
 
 div.landingContainer h3 {
     font-size: 20px;
-    text-align: center;
     margin: 5px;
 }
 
@@ -311,8 +301,7 @@ a.archive::before {
 /* ABOUT BUTTON */
 a.about {
     border-color: transparent;
-    display: initial;
-    margin: 8px 0px 4px 0px;
+    margin: 4px 0px 0px 0px;
     background-color: #786ad2;
 }
 a.about:hover {
@@ -551,7 +540,7 @@ div#imageViewer img{
     }
 
     a.about {
-        margin: 28px;
+        margin: 18px 0 0 0;
     }
 }
 
@@ -573,8 +562,10 @@ a.email::before {
 a.email {
     font-size: 18px !important;
     padding: 4px 4px 4px 36px;
-    margin: 12px 0 0 0;
+    margin: 4px;
     text-decoration: none;
+    display: inline-block;
+    position: relative;
 }
 
 .floatClear:before, h1:before {
