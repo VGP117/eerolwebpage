@@ -302,7 +302,7 @@ a.archive::before {
 
 h1 {
     font-size: 36px;
-    margin: 14px 0px 26px 0px;
+    margin: 6px 0px 26px 0px;
     font-weight: 400;
 }
 
@@ -534,6 +534,10 @@ div#imageViewer img{
         width: 200px;
         height: 200px;
         margin-top: 50px;
+    }
+
+    h1 {
+        font-size: 48px;
     }
 }
 
