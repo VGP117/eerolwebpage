@@ -301,13 +301,13 @@ a.archive::before {
 }
 
 h1 {
-    font-size: 54px;
+    font-size: 36px;
     margin: 14px 0px 26px 0px;
     font-weight: 400;
 }
 
 h2 {
-    font-size: 30px;
+    font-size: 28px;
     margin: 14px 0px 10px 0px;
     font-weight: 400;
 }
@@ -342,6 +342,8 @@ p {
 img.aboutImage {
     float: right;
     margin: 14px 0px 14px 14px;
+    width: 100%;
+    height: auto;
 }
 
 a.image {
@@ -507,6 +509,11 @@ div#imageViewer img{
     img.thumbnail {
         margin: 6px 26px 6px 6px;
     }
+
+    img.aboutImage {
+        width: auto;
+    }
+
     #landing h1 {
         font-size: 90px;
         margin: 30px 0 0 0;
