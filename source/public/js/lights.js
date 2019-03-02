@@ -1,7 +1,9 @@
+var s = "expires = Fri, 31 Dec 9999 23: 59: 59 GMT";
+var l = true;
 if (getCookie("lights") == "off") {
-    lightsOff();
+    off();
 } else {
-    lightsOn();
+    on();
 }
 
 function getCookie(cname) {
@@ -19,21 +21,20 @@ function getCookie(cname) {
     return "";
 }
 
-function lightsOff() {
-    document.cookie = "lights = off;  expires = Fri, 31 Dec 9999 23:59:59 GMT";
+
+function off() {
+    l = false;
+    document.cookie = "lights = off; " + s;
     document.body.classList.add("dark");
 }
 
-function lightsOn() {
-    document.cookie = "lights = on;  expires = Fri, 31 Dec 9999 23:59:59 GMT";
+function on() {
+    l = true;
+    document.cookie = "lights = on; " + s;
     document.body.classList.remove("dark");
 }
 
 function toggleLights() {
-    if (getCookie("lights") == "off") {
-        lightsOn();
-    }
-    else {
-        lightsOff();
-    }
+    if (l) off();
+    else on();
 }

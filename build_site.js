@@ -47,11 +47,6 @@ function init() {
     fs.removeSync(__dirname + "/temp");
 }
 
-function sourceCopyTest(file) {
-    if (/js[\\\/]|css[\\\/]/.test(file) && !/\.min\./.test(file)) return false; // we only want minified files from folders "js" and "css"
-    return true;
-};
-
 /**
  * Setup lentokonepeli downloads
  * @param {Object} lkp_timestamps
@@ -149,8 +144,8 @@ function insertInlineJS(dom) {
             if (src.startsWith("https://eerolehtinen.net") || !src.startsWith("http")) { // if js file is from my site
                 var jsFileName = src.split("/").slice(-1).pop(); // get stuff after last "/", is js filename
 
-                // if filesize of js file smaller than 500 bytes, change from external to inline
-                if (fs.statSync(__dirname + "/source/public/js/" + jsFileName).size < 500) {
+                // if filesize of js file smaller than 800 bytes, change from external to inline
+                if (fs.statSync(__dirname + "/source/public/js/" + jsFileName).size < 800) {
                     $(this).remove();
                     var js = fs.readFileSync(__dirname + "/source/public/js/" + jsFileName);
                     $("<script>").html(js.toString()).appendTo($("body"));
