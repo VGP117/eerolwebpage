@@ -612,3 +612,7 @@ a.email {
     opacity: 1;
     transition: transform 0.15s ease-out, opacity 0.15s ease-out;
 }
+
+#path {
+    opacity: 0.6;
+}
