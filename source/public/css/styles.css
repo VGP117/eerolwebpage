@@ -136,17 +136,20 @@ footer > * {
 #landing h1 {
     font-size: 50px;
     margin: 5px 0px 5px 0px;
+    text-align: center;
 }
 
 #landing h2 {
     font-size: 22px;
     margin: 5px 0px 0px 0px;
     color: slateblue;
+    text-align: center;
 }
 
 #landing h3 {
     font-size: 20px;
     margin: 5px;
+    text-align: center;
 }
 
 #landing p {
