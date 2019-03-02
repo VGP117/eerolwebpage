@@ -98,7 +98,7 @@ function createDlArchive(archive, timestamps) {
     var dom = new jsdom.JSDOM(fs.readFileSync(__dirname + "/build/private/dl_archive.html"));    
     var $ = jquery(dom.window);
     $("#backLink").attr({href: archive.homePageLink, alt: archive.homePageLinkAlt});
-    $("title").html("Download archive - " + archive.name);
+    $("title").html("Archive - " + archive.name);
     $("#title").html($("title").html());
     archive.files.forEach(file => {
         var fileInfo = fs.statSync(__dirname + "/downloads/" + archive.name.toLowerCase() + "/" + file);

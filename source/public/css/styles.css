@@ -399,12 +399,12 @@ div#imageViewer img{
 }
 
 #dlArchive #title {
-    padding: 20px 0px 0px 70px;
+    padding: 0 0 0 70px;
 }
 
 #dlArchive #title::before {
     content: url(../images/ic_folder_open_black_48pt_2x.png);
-    top: 40px;
+    top: 78px;
     left: -12px;
 }
 
