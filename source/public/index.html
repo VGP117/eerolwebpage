@@ -7,102 +7,25 @@
     <meta charset="UTF-8">
     <meta name="description" content="Home page of computer programmer Eero Lehtinen.">
     <meta name="author" content="Eero Lehtinen">
-    <meta name="keywords" content="programmer, lentokonepeli, ohjelmoija, koodari, ohjelmisto, tietokone, peli, pelintekijä">
     <link rel="shortcut icon" href="images/icon.png">
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="css/styles.min.css">
-    <script defer src="js/index.min.js"></script>
+    <script defer src="js/lights.min.js"></script>
 </head>
 
 <body>
-    <div id="landing">
-        <div>
-            <div class="landingContainer" >
-                <img class="profile" width="200" height="200" src="images/profile_circle.jpg">
-                <h1>I'm Eero</h1>
-                <h2>I create software solutions</h2>
-                <a id="email" href="mailto:eero@eerolehtinen.net"class="email white hasIcon">eero@eerolehtinen.net</a>
-                <a class="button about hasIcon" href="aboutme.html" alt="Info about the owner of this site">About me</a>
-            </div>
-            <div class="landingContainer">
-                <h3>I'm familiar with:</h3>
-                <p style="opacity: 0.6;">Languages: <em>C++, JavaScript, HTML, CSS, C#, Java, PowerShell</em></p>
-                <p style="opacity: 0.6;">Programs: <em>VS Community, VS Code, Photoshop, Eclipse IDE, Unity Editor and Blender</em></p>
-            </div>
-        </div>
-        <span class="scrollDownTooltip">View my projects</span>
-        <a class="scrollDown button white" href="#Projects" alt="Scroll down to projects"><img src="images/ic_keyboard_arrow_down_white_54pt_2x.png" width="54" height="54"></a>
-    </div>
-    <div id="mainContent" class="hasLanding">
-        <section>
-            <h1 id="Projects">Projects</h1>
-            <ul id="projectList">
-                <li>
-                    <a href="lentokonepeli-x.html" alt="Project Lentokonepeli-X">
-                        <img width="64" height="64" class="thumbnail" src="images/lentokonepeli-x_thumb.png" alt="Lentokonepeli-X thumbnail">
-                        <div class="flex-column">
-                            <span class="listItemTitle">Lentokonepeli-X</span>
-                            <div class="tagList">
-                                <div class="tag">Game</div>
-                                <div class="tag">Multiplayer</div>
-                                <div class="tag">PC</div>
-                                <div class="tag">C++</div>
-                                <div class="tag">Work in progress</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="dawdle_block.html" alt="Project Dawdle block">
-                        <img width="64" height="64" class="thumbnail" src="images/dawdle_block_thumb.png" alt="Dawdle block thumbnail">
-                        <div class="flex-column">
-                            <span class="listItemTitle">Dawdle block</span>
-                            <div class="tagList">
-                                <div class="tag">Browser extension</div>
-                                <div class="tag">Chrome/Firefox</div>
-                                <div class="tag">HTML</div>
-                                <div class="tag">CSS</div>
-                                <div class="tag">JavaScript</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="swag-man.html" alt="Project Swag-man">
-                        <img width="64" height="64" class="thumbnail" src="images/swag-man_upscale_thumb.png" alt="Swag-man thumbnail">
-                        <div class="flex-column">
-                            <span class="listItemTitle">Swag-man</span>
-                            <div class="tagList">
-                                <div class="tag">Game</div>
-                                <div class="tag">Singleplayer</div>
-                                <div class="tag">PC/Mac/Linux</div>
-                                <div class="tag">Java</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li>
-                    <a href="thebouncingball.html" alt="Project TheBouncingBall">
-                        <img width="64" height="64" class="thumbnail" src="images/thebouncingball_thumb.png" alt="TheBouncingBall thumbnail">
-                        <div class="flex-column">
-                            <span class="listItemTitle">TheBouncingBall</span>
-                            <div class="tagList">
-                                <div class="tag">Game</div>
-                                <div class="tag">Singleplayer</div>
-                                <div class="tag">Android</div>
-                                <div class="tag">Unity</div>
-                                <div class="tag">UnityScript</div>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-            </ul>
-            <p>+ dozens of smaller projects</p>
+    <nav id="topNav"><a href="/index.html">Eero Lehtinen</a><a href="/aboutme.html">About</a><a href="/work.html">Work</a></nav>
+    <main id="content">
+        <section id="landing">
+            <img class="profile" width="200" height="200" src="images/profile_circle.jpg">
+            <h1>I'm Eero</h1>
+            <h2>I create software solutions</h2>
+            <a id="email" href="mailto:eero@eerolehtinen.net"class="email hasIcon">eero@eerolehtinen.net</a>
+            <h3>I'm familiar with:</h3>
+            <p>Languages: <em>C++, JavaScript, HTML, CSS, C#, Java, PowerShell</em></p>
+            <p>Programs: <em>VS Community, VS Code, Photoshop, Eclipse IDE, Unity Editor and Blender</em></p>
         </section>
-        <section id="footer">
-            by Eero Lehtinen
-        </section>
-    </div>
+    </main>
+    <footer><a class="credit" href="/index.html">by Eero Lehtinen</a><a id="lightsToggle" href="javascript:void(0)" onclick="toggleLights()"></a></footer>
 </body>
     
 </html>

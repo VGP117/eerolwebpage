@@ -7,51 +7,52 @@
     <meta name="author" content="Eero Lehtinen">
     <meta name="keywords" content="Java, singleplayer, game">
     <link rel="shortcut icon" href="images/icon.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="css/styles.min.css">
+    <script defer src="js/lights.min.js"></script>
 </head>
 
 <body>
-    <div id="mainContent">
-        <section id="topBar">
-            <a id="homeLink" href="index.html#Projects" alt="Home page">
-                <img src="images/ic_arrow_back_slateblue_36pt_2x.png" width="36" height="36">
-            </a>
-            <div id="pageTitle">
-                Swag-man
-            </div>
-        </section>
+    <nav id="topNav"><a href="/index.html">Eero Lehtinen</a><a href="/aboutme.html">About</a><a href="/work.html">Work</a>
+    </nav>
+    <main id="content">
         <section>
-            <img width="448" height="576" class="aboutImage" src="images/swag-man_screenshot.png" alt="Swag-man in-game screenshot">
-            <h1 id="About">About</h1>
+            <h1>Swag-man</h1>
+            <img width="448" height="576" class="aboutImage" src="images/swag-man_screenshot.png"
+                alt="Swag-man in-game screenshot">
+            <h2 id="About">About</h2>
             <p>
-                The purpose of Swag-man was to imitate classic Pac-Man as closely as possible in Java and make it happen in about two weeks.
-                I recreated all the original game mechanics with the help of <a href="https://www.gamasutra.com/view/feature/132330/the_pacman_dossier.php?page=1" alt="Gamasutra article explaining Pac-Man">this Gamasutra article</a>.
-                Only feature i couldn't bring myself to do was the glitching when reaching level 256. 
-                My Swag-man continues chomping forever. 
+                The purpose of Swag-man was to imitate classic Pac-Man as closely as possible in Java and make it happen in
+                about two weeks.
+                I recreated all the original game mechanics with the help of <a
+                    href="https://www.gamasutra.com/view/feature/132330/the_pacman_dossier.php?page=1"
+                    alt="Gamasutra article explaining Pac-Man">this Gamasutra article</a>.
+                Only feature i couldn't bring myself to do was the glitching when reaching level 256.
+                My Swag-man continues chomping forever.
                 At least until the level counter overflows at 2,147,483,648.
-                Also my version runs at 100 fps while the original runs at 60 fps, wich makes some bugs like passing through ghosts less likely to happen on my version.
+                Also my version runs at 100 fps while the original runs at 60 fps, wich makes some bugs like passing through
+                ghosts less likely to happen on my version.
             </p>
         </section>
         <section>
-            <h1 id="Download">Download</h1>
+            <h2 id="Download">Download</h2>
             <p>Current version: <span class="latest_version">1.0</span>, released <span class="date">2016-03-18</span></p>
             <div>
-                <a class="button download hasIcon" href="downloads/Swag-man.jar" alt="Download latest version of Swag-man" download="">Get for PC/Mac/Linux</a>
+                <a class="button download hasIcon" href="downloads/Swag-man.jar" alt="Download latest version of Swag-man"
+                    download="">Get for PC/Mac/Linux</a>
             </div>
         </section>
         <section>
-            <h1 id="Setup_guide">Setup guide</h1>
-            <h2>Installing</h2>
+            <h2 id="Setup_guide">Setup guide</h2>
+            <h3>Installing</h3>
             <p>No need to install. Everything is contained within the jar file.</p>
-            <h2>"This file can harm your computer"</h2>
+            <h3>"This file can harm your computer"</h3>
             <p>
-                Don't worry about this message. My downloads don't contain any viruses/bloatware/etc. Your antivirus will most likely warn you anyway.
-                This is because they use heuristics to flag everything that is not widely known. Click keep or run anyway when asked.
+                Don't worry about this message. My downloads don't contain any viruses/bloatware/etc. Your antivirus will most
+                likely warn you anyway.
+                This is because they use heuristics to flag everything that is not widely known. Click keep or run anyway when
+                asked.
             </p>
         </section>
-        <section id="footer">
-            by Eero Lehtinen
-        </section>
-    </div>
+    </main>
+    <footer><a class="credit" href="/index.html">by Eero Lehtinen</a><a id="lightsToggle" href="javascript:void(0)" onclick="toggleLights()"></a></footer>
 </body></html>

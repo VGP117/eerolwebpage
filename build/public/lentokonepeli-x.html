@@ -7,64 +7,64 @@
     <meta name="author" content="Eero Lehtinen">
     <meta name="keywords" content="C++, multiplayer, game">
     <link rel="shortcut icon" href="images/icon.png">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
     <link rel="stylesheet" href="css/styles.min.css">
+    <script defer="" src="js/lights.min.js"></script>
     
 </head>
 
 <body>
-    <div id="mainContent">
-        <section id="topBar">
-            <a id="homeLink" href="index.html#Projects" alt="Home page">
-                <img src="images/ic_arrow_back_slateblue_36pt_2x.png" width="36" height="36">
-            </a>
-            <div id="pageTitle">
-                Lentokonepeli-X
-            </div>
-        </section>
+    <nav id="topNav"><a href="/index.html">Eero Lehtinen</a><a href="/aboutme.html">About</a><a href="/work.html">Work</a>
+    </nav>
+    <main id="content">
         <section>
+            <h1>Lentokonepeli-X</h1>
             <a class="image" target="blank_" href="images/lkp_0.9.1-alpha_screenshot.jpg" alt="Lentokonepeli-X in-game screenshot">
                 <img width="400" height="255" src="images/lkp_0.9.1-alpha_screenshot.jpg" alt="Lentokonepeli-X in-game screenshot"><br>
                 <span>Click to zoom</span>
             </a>
-            <h1>About</h1>
+            <h2>About</h2>
             <p>
-                A multiplayer arena shooter with planes in C++. 
-                Contains a lot of interesting programming concepts. 
-                I had to create a whole engine for game logic like creating game objects, applying velocity and detecting collisions. 
-                Also I have to make all the networking by myself. I have to make sure that all players are synced as well as possible. 
-                Not an easy task. 
-                Thankfully I’m using <a href="https://www.sfml-dev.org/">the SFML library</a>, which can handle rendering and audio for me.
+                A multiplayer arena shooter with planes in C++.
+                Contains a lot of interesting programming concepts.
+                I had to create a whole engine for game logic like creating game objects, applying velocity and detecting
+                collisions.
+                Also I have to make all the networking by myself. I have to make sure that all players are synced as well as
+                possible.
+                Not an easy task.
+                Thankfully I’m using <a href="https://www.sfml-dev.org/">the SFML library</a>, which can handle rendering and
+                audio for me.
                 This game will most likely appear in Steam soon™... for money.
             </p>
         </section>
         <section>
-            <h1>Download</h1>
-            <p>Current version: <span class="latest_version">0.9.1-alpha</span>, released <span class="date">2018-07-22</span></p>
+            <h2>Download</h2>
+            <p>Current version: <span class="latest_version">0.9.1-alpha</span>, released <span class="date">2018-07-22</span>
+            </p>
             <div>
                 <a id="dl-pc" class="button download hasIcon" alt="Download latest version of Lentokonepeli-X for PC" download="" href="downloads/lentokonepeli-x/v0.9.1-alpha-pc-lkp.zip">Get for PC</a>
             </div>
             <div><a class="button small archive hasIcon" href="downloads/lentokonepeli-x/archive.html" alt="View all releases of Lentokonepeli-X">Archive</a></div>
         </section>
         <section>
-            <h1>Join our discord</h1>
+            <h2>Join our discord</h2>
             <p><a alt="Join our discord channel" href="https://discord.gg/9sDwU7r">https://discord.gg/9sDwU7r</a></p>
         </section>
         <section>
-            <h1>Setup guide</h1>
-            <h2>Installing</h2>
+            <h2>Setup guide</h2>
+            <h3>Installing</h3>
             <p>No need to install. Just unzip the folder and put it wherever you want.</p>
-            <h2>Updating</h2>
+            <h3>Updating</h3>
             <p>Download and unzip new version and copy "config.ini" from your old version's folder to the new folder.</p>
-            <h2>"This file can harm your computer"</h2>
+            <h3>"This file can harm your computer"</h3>
             <p>
-                Don't worry about this message. My downloads don't contain any viruses/bloatware/etc. Your antivirus will most likely warn you anyway.
-                This is because they use heuristics to flag everything that is not widely known. Click keep or run anyway when asked.
+                Don't worry about this message. My downloads don't contain any viruses/bloatware/etc. Your antivirus will most
+                likely warn you anyway.
+                This is because they use heuristics to flag everything that is not widely known. Click keep or run anyway when
+                asked.
             </p>
         </section>
-        <section id="footer">
-            by Eero Lehtinen
-        </section>
-    </div>
-    <div id="imageViewer"></div>
-<script>var e=document.querySelectorAll("a.image");e.forEach(function(e){e.addEventListener("click",function(e){e.preventDefault();for(var t=document.getElementById("imageViewer");t.firstChild;)t.removeChild(t.firstChild);var i=this.getElementsByTagName("img")[0];t.appendChild(i.cloneNode()),t.className="show",t.addEventListener("click",function(){this.className=""})})});</script></body></html>
+        <div id="imageViewer"></div>
+    </main>
+    <footer><a class="credit" href="/index.html">by Eero Lehtinen</a><a id="lightsToggle" href="javascript:void(0)" onclick="toggleLights()"></a></footer>
+    
+<script>var links=document.querySelectorAll("a.image");links.forEach(function(e){e.addEventListener("click",function(e){e.preventDefault();for(var i=document.getElementById("imageViewer");i.firstChild;)i.removeChild(i.firstChild);var t=this.getElementsByTagName("img")[0];i.appendChild(t.cloneNode()),i.className="show",i.addEventListener("click",function(){this.className=""})})});</script></body></html>

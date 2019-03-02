@@ -7,6 +7,7 @@ init();
 function init() {
     fs.emptyDir(__dirname + "/build")
     .catch(err => console.error(err)).then(() => {
+
         fs.copy(__dirname + "/source", __dirname + "/build", {filter: sourceCopyTest})
         .catch(err => console.error(err)).then(() => {
             var timestamps = JSON.parse(fs.readFileSync(__dirname + "/build/private/project-timestamps.json", 'utf8'));

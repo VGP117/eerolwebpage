@@ -1,8 +1,6 @@
 {
     "es6-css-minify.js": {
-        "mangle": {
-            "toplevel": true
-        },
+        "mangle": true,
         "compress": true
     },
     "es6-css-minify.css": {
