@@ -135,20 +135,17 @@ footer > * {
 
 #landing h1 {
     font-size: 50px;
-    text-align: center;
     margin: 5px 0px 5px 0px;
 }
 
 #landing h2 {
     font-size: 22px;
-    text-align: center;
     margin: 5px 0px 0px 0px;
     color: slateblue;
 }
 
 #landing h3 {
     font-size: 20px;
-    text-align: center;
     margin: 5px;
 }
 
@@ -561,8 +558,10 @@ a.email:hover:before , a.email:hover:active {
 a.email {
     font-size: 18px;
     padding: 4px 4px 4px 36px;
-    margin: 12px 0 0 0;
+    margin: 4px;
     text-decoration: none;
+    display: inline-block;
+    position: relative;
 }
 
 .floatClear:before, h1:before {
