@@ -1,40 +1,25 @@
-var s = "expires = Fri, 31 Dec 9999 23: 59: 59 GMT";
-var l = true;
-if (getCookie("lights") == "off") {
-    off();
-} else {
-    on();
-}
+age = "max-age=4294967295;";
+b = document.body;
 
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) === 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
+if (is_l()) on();
+else off();
+
+function is_l() {
+    return document.cookie.includes("_l=1");
 }
 
 
 function off() {
-    l = false;
-    document.cookie = "lights = off; " + s;
-    document.body.classList.add("dark");
+    document.cookie = "_l=0;" + age;
+    b.classList.add("dark");
 }
 
 function on() {
-    l = true;
-    document.cookie = "lights = on; " + s;
-    document.body.classList.remove("dark");
+    document.cookie = "_l=1;" + age;
+    b.classList.remove("dark");
 }
 
-function toggleLights() {
-    if (l) off();
+function t_l() {
+    if (is_l()) off(); 
     else on();
 }

@@ -43,6 +43,6 @@
             </div>
         </section>
     </main>
-    <footer><a class="credit" href="/index.html">by Eero Lehtinen</a><a id="lightsToggle" href="javascript:void(0)" onclick="toggleLights()"></a></footer>
+    <footer><a class="credit" href="/index.html">by Eero Lehtinen</a><a id="lightsToggle" href="javascript:void(0)" onclick="t_l()"></a></footer>
 
-<script>var s="expires = Fri, 31 Dec 9999 23: 59: 59 GMT",l=!0;function getCookie(o){for(var t=o+"=",n=document.cookie.split(";"),e=0;e<n.length;e++){for(var i=n[e];" "==i.charAt(0);)i=i.substring(1);if(0===i.indexOf(t))return i.substring(t.length,i.length)}return""}function off(){l=!1,document.cookie="lights = off; "+s,document.body.classList.add("dark")}function on(){l=!0,document.cookie="lights = on; "+s,document.body.classList.remove("dark")}function toggleLights(){l?off():on()}"off"==getCookie("lights")?off():on();</script></body></html>
+<script>function is_l(){return document.cookie.includes("_l=1")}function off(){document.cookie="_l=0;"+age,b.classList.add("dark")}function on(){document.cookie="_l=1;"+age,b.classList.remove("dark")}function t_l(){is_l()?off():on()}age="max-age=4294967295;",b=document.body,is_l()?on():off();</script></body></html>
