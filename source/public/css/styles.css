@@ -410,7 +410,7 @@ div#imageViewer img{
 
 #dlArchive #title::before {
     content: url(../images/ic_folder_open_black_48pt_2x.png);
-    top: 78px;
+    top: 70px;
     left: -12px;
 }
 
