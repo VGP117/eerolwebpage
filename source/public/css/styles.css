@@ -232,7 +232,7 @@ div.tag {
 }
 
 section {
-    padding: 10px 0px 2px 0px;
+    padding: 0;
 }
 
 a.button {
@@ -302,19 +302,23 @@ a.archive::before {
 
 h1 {
     font-size: 36px;
-    margin: 6px 0px 26px 0px;
+    margin: 36px 0px 16px 0px;
     font-weight: 400;
+}
+
+h1:first-child {
+    margin-top: 0;
 }
 
 h2 {
     font-size: 28px;
-    margin: 14px 0px 10px 0px;
+    margin: 18px 0px 6px 0px;
     font-weight: 400;
 }
 
 h3 {
     font-size: 18px;
-    margin: 10px 0px 8px 0px;
+    margin: 12px 0px 6px 0px;
     font-weight: 400;
     color: slateblue;
 }
@@ -331,7 +335,7 @@ section#footer {
 
 p {
     letter-spacing: .016rem;
-    margin: 8px 0px 12px 0px;
+    margin: 4px 0px 12px 0px;
     color: var(--secondary-text-color);
     line-height: 1.5;
     text-align: justify;
@@ -537,7 +541,7 @@ div#imageViewer img{
     }
 
     h1 {
-        font-size: 48px;
+        font-size: 42px;
     }
 }
 
@@ -626,4 +630,28 @@ a.email {
 
 #path {
     opacity: 0.6;
+}
+
+#expList {
+    list-style-type: none;
+}
+
+#expList > li:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+#expList h2 {
+    font-size: 22px;
+    margin: 5px 0px;
+}
+
+#expList h3 {
+    font-size: 18px;
+    margin: 5px 0px;
+}
+
+#expList p {
+    font-size: 16px;
+    margin: 5px 0px;
+    line-height: 1.4;
 }
