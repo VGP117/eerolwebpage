@@ -2,9 +2,16 @@ const jsdom = require("jsdom");
 const fs = require("fs-extra");
 const jquery = require("jquery");
 const crypto = require("crypto");
+const perf = require("perf_hooks").performance;
 const path = require("path").posix;
 
+var t1 = perf.now();
+
 init();
+
+var t2 = perf.now();
+
+console.log(`Site built in ${t2.toFixed(0)} ms, ${(t2-t1).toFixed(0)} ms not including module loading`);
 
 function init() {
 
