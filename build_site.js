@@ -20,9 +20,12 @@ function init() {
     fs.ensureDirSync(__dirname + "/build/private");
     fs.moveSync(__dirname + "/build", __dirname + "/temp");
 
+    // Copy server file
     fs.copySync(__dirname + "/source/server.js", __dirname + "/build/server.js");
+    // Copy robots.txt
+    fs.copySync(__dirname + "/source/public/robots.txt", __dirname + "/build/public/robots.txt");
 
-    // First copy HTML files
+    // Copy HTML files
     for (var filePath of walkSync(__dirname + "/source")) {
         if (filePath.endsWith(".html")) {
             var fileDest = filePath.replace("source", "build");
