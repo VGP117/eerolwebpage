@@ -5,9 +5,8 @@ html {
     letter-spacing: .01em;
     font-size: 16px;
     font-weight: 400;
-    height: 100%;
-    width: 100%;
     overflow-x: hidden;
+    margin-left: calc(100vw - 100%);
 }
 
 body {
