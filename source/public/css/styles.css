@@ -22,7 +22,7 @@ body {
     --text-color: black;
     --secondary-text-color: rgb(66, 66, 66);
     --link-hover-color: rgb(104, 104, 104);
-    --bg-hover-color: rgb(230, 230, 230);
+    --bg-hover-color: rgb(234, 234, 234);
     background-color: var(--bg-color);
     color: var(--text-color);
 }
@@ -32,7 +32,7 @@ body.dark {
     --text-color: white;
     --secondary-text-color: rgb(220, 220, 220);
     --link-hover-color: rgb(150, 150, 150);
-    --bg-hover-color: rgb(68, 68, 68);
+    --bg-hover-color: rgb(64, 64, 64);
 }
 
 * {
@@ -53,8 +53,6 @@ body.dark {
     padding: 6px 14px;
     color: var(--text-color);
     margin: 0 2px;
-    border-radius: 28.5px;
-    transition: background-color 0s;
 }
 
 #topNav > a:first-child {
@@ -63,7 +61,7 @@ body.dark {
 
 #topNav > a:hover {
     background-color: var(--bg-hover-color);
-    transition: background-color 0.3s;
+    transition: background-color 0.2s;
 }
 
 #topNav > a.selected {
@@ -95,13 +93,12 @@ footer > * {
     background-position: center;
     background-image: url(../images/ic_lightbulb_outline_black_24pt_2x.png);
     border-radius: 50%;
-    transition: background-color 0, opacity 0;
     opacity: 0.25;
 }
 
 #lightsToggle:hover {
     background-color: var(--bg-hover-color);
-    transition: background-color 0.3s, opacity 0.3s;
+    transition: background-color 0.2s, opacity 0.2s;
     opacity: 1;
 }
 
@@ -193,6 +190,7 @@ footer > * {
 }
 
 #projectList li a:hover::after, a.fileItem:hover::after {
+    transition: opacity 0.2s;
     opacity: 0.1;
 }
 
@@ -239,7 +237,6 @@ section {
 }
 
 a.button {
-    border-radius: 10px;
     border: 0;
     background-color: slateblue;
     color: white;
@@ -255,6 +252,7 @@ a.button {
 a.button:hover {
     color: white;
     background-color: #877ad7;
+    transition: background-color 0.2s;
 }
 a.button:active {
     color: white;
@@ -267,7 +265,6 @@ a.button::before {
 }
 
 a.button.small {
-    border-radius: 5px;
     padding: 8px 14px 8px 42px;
     font-size: 16px;
 }
@@ -478,8 +475,6 @@ div#imageViewer img{
     #topNav > a {
         font-size: 28px;
         padding: 12px 28px;
-        margin: 0 2px;
-        border-radius: 28.5px;
     }
 
     footer {
