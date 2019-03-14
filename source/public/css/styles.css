@@ -190,7 +190,6 @@ footer > * {
 }
 
 #projectList li a:hover::after, a.fileItem:hover::after {
-    transition: opacity 0.2s;
     opacity: 0.1;
 }
 
