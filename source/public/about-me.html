@@ -1,4 +1,6 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
     <title>Eero Lehtinen - About me</title>
     <meta name="theme-color" content="#6a5acd">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=10, minimum-scale=1, user-scalable=yes">
@@ -6,15 +8,16 @@
     <meta name="description" content="Info about a computer programmer Eero Lehtinen.">
     <meta name="author" content="Eero Lehtinen">
     <link rel="shortcut icon" href="images/icon.png">
-    <link rel="stylesheet" href="css/styles-e08e6ffe.min.css">
-    
+    <link rel="stylesheet" href="css/styles.min.css">
+    <script defer src="js/lights.min.js"></script>
 </head>
 
 <body>
-    <nav id="topNav"><a href="/index.html">Eero Lehtinen</a><a href="/aboutme.html">About</a><a href="/work.html">Work</a>
+    <nav id="topNav"><a href="/">Eero Lehtinen</a><a href="/about-me">About</a><a href="/work">Work</a>
     </nav>
     <main id="content">
-        <img width="405" height="500" class="aboutImage" src="images/me_grad.jpg" alt="Image of me after graduating from lukio">
+        <img width="405" height="500" class="aboutImage" src="images/me_grad.jpg"
+            alt="Image of me after graduating from lukio">
         <p class="floatClear">
             My name is Eero Lehtinen. I'm <span id="age">19</span> year old Finnish man passionately interested in
             creating software.
@@ -48,8 +51,8 @@
             Some math problems may take three hours and multiple failed attempts, but I'm always determined to find the
             right answer.
         </p>
-        
+        <script src="js/about-me.min.js"></script>
     </main>
-    <footer><a class="credit" href="/index.html">by Eero Lehtinen</a><a id="lightsToggle" href="javascript:void(0)" onclick="t_l()"></a></footer>
-
-<script>function is_l(){return document.cookie.includes("_l=1")}function off(){document.cookie="_l=0;"+age,document.body.classList.add("dark")}function on(){document.cookie="_l=1;"+age,document.body.classList.remove("dark")}function t_l(){is_l()?off():on()}age="max-age=4294967295;",is_l()?on():off();</script><script>var now=new Date,birthDate=new Date(1999,9,15),age=Math.floor((now-birthDate)/315576e5),article="a ";(18===age||age>=80&&age<=89)&&(article="an "),document.getElementById("age").innerHTML=article+age.toString();</script></body></html>
+    <footer><a class="credit" href="/">by Eero Lehtinen</a><a id="lightsToggle" href="javascript:void(0)" onclick="t_l()"></a></footer>
+</body>
+</html>
