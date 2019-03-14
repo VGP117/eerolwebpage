@@ -65,7 +65,7 @@ function lkp_init(lkp_timestamps) {
     var lkp_platforms = ["pc"]; // add mac and linux in the future
     var lkp_dlArchive = {
         name: "Lentokonepeli-X",
-        homePageLink: "../lentokonepeli-x.html",
+        homePageLink: "../lentokonepeli-x",
         homePageLinkAlt: "Lentokonepeli project",
         files: []
     };

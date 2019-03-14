@@ -67,6 +67,10 @@ body.dark {
     transition: background-color 0.3s;
 }
 
+#topNav > a.selected {
+    background-color: var(--bg-hover-color);
+}
+
 footer {
     width: 100%;
     max-width: 920px;
