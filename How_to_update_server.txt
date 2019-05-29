@@ -1,1 +1,3 @@
-NEWER WAY - run build_site.js locally, then just push to master, server updates itself
+1. Make edits in source folder
+2. Run build_site.js locally
+3. Push to master, server updates itself
