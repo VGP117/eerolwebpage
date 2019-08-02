@@ -4,8 +4,9 @@ var t0 = perf.now();
 
 const path = require("path").posix;
 const jsdom = require("jsdom");
-const fs = require("fs-extra");
 const jquery = require("jquery");
+const cheerio = require("cheerio");
+const fs = require("fs-extra");
 const crypto = require("crypto");
 
 var t1 = perf.now();
@@ -46,13 +47,12 @@ function init() {
     for (var filePath of walkSync(__dirname + "/build")) {
         // only html files and not google verification file
         if (filePath.endsWith(".html") && !path.basename(filePath).startsWith("google")) {
-            var content = fs.readFileSync(filePath);
-            var dom = new jsdom.JSDOM(content); 
+            var $ = cheerio.load(fs.readFileSync(filePath), {decodeEntities: false});
 
-            insertInlineJS(dom);
-            updateUsedResourcePaths(dom, usedResources); // this also copies used js and css resources
+            insertInlineJS($);
+            updateUsedResourcePaths($, usedResources); // this also copies used js and css resources from source to build
 
-            fs.writeFileSync(filePath, dom.serialize());
+            fs.writeFileSync(filePath, $.html());
         }
     }
 
@@ -81,12 +81,11 @@ function lkp_init(lkp_timestamps) {
 
     // Setup labels and download links to reflect current version
 
-    var dom = new jsdom.JSDOM(fs.readFileSync(__dirname + "/source/public/lentokonepeli-x.html"));
-    var $ = jquery(dom.window);
+    var $ = cheerio.load(fs.readFileSync(__dirname + "/source/public/lentokonepeli-x.html"), { decodeEntities: false });
     lkp_platforms.forEach(platform => {
         $("#dl-" + platform).attr("href", "downloads/lentokonepeli-x/v" + Object.keys(lkp_timestamps)[0] + "-" + platform + "-lkp.zip");
     });
-    fs.writeFileSync(__dirname + "/build/public/lentokonepeli-x.html", dom.serialize());
+    fs.writeFileSync(__dirname + "/build/public/lentokonepeli-x.html", $.html());
 }
 
 /**
@@ -95,21 +94,20 @@ function lkp_init(lkp_timestamps) {
  */
 function applyTimeStampsToSites(timestamps) {
     for (var project in timestamps) {
-        var dom = new jsdom.JSDOM(fs.readFileSync(__dirname + "/build/public/" + project.toLowerCase() + ".html"));
-        var $ = jquery(dom.window);
+        var $ = cheerio.load(fs.readFileSync(__dirname + "/build/public/" + project.toLowerCase() + ".html"), { decodeEntities: false });
+
         var latest_version = Object.keys(timestamps[project])[0];
 
         $(".latest_version").text(latest_version);
         $(".date").text(timestamps[project][latest_version]);
 
-        fs.writeFileSync(__dirname + "/build/public/" + project.toLowerCase() + ".html", dom.serialize());
+        fs.writeFileSync(__dirname + "/build/public/" + project.toLowerCase() + ".html", $.html());
     }
 }
 
 // Create dowloads folder page for archive object
 function createDlArchive(archive, timestamps) {
-    var dom = new jsdom.JSDOM(fs.readFileSync(__dirname + "/build/private/dl_archive.html"));    
-    var $ = jquery(dom.window);
+    var $ = cheerio.load(fs.readFileSync(__dirname + "/build/private/dl_archive.html"), { decodeEntities: false });    
     $("#backLink").attr({href: archive.homePageLink, alt: archive.homePageLinkAlt});
     $("title").html("Archive - " + archive.name);
     $("#title").html($("title").html());
@@ -133,7 +131,7 @@ function createDlArchive(archive, timestamps) {
     });
 
     fs.ensureDir(`${__dirname}/build/public/archives/`);
-    fs.writeFileSync(`${__dirname}/build/public/archives/${archive.name.toLowerCase()}_archive.html`, dom.serialize());
+    fs.writeFileSync(`${__dirname}/build/public/archives/${archive.name.toLowerCase()}_archive.html`, $.html());
 }
 
 // Create finnish-style number strings
@@ -144,10 +142,9 @@ function numberWithSpaces(x) {
 /**
  * replace script links in html with inline js if the file size is small enough,
  * to reduce unnesessary http requests
- * @param {JSDOM} dom html dom
+ * @param {CheerioStatic} $ cheerio html dom
  *  */ 
-function insertInlineJS(dom) {
-    var $ = jquery(dom.window);
+function insertInlineJS($) {
 
     var scripts = $("script");
     scripts.each(function(index) {
@@ -169,12 +166,12 @@ function insertInlineJS(dom) {
 }
 
 /** Get js and css used by this html file and create cache busting names for them
- * @param {JSDOM} dom 
+ *  Also copies the js and css files from source to build with cache busted names
+ * @param {CheerioStatic} $ cheerio html dom
  * @param {Object} usedResources already used resources
  */
-function updateUsedResourcePaths (dom, usedResources) {
-    var $ = jquery(dom.window);
-
+function updateUsedResourcePaths ($, usedResources) {
+    
     var scripts = $("script");
     scripts.each(function(index) {
         editDomAttrResource($(this), "src", "js", usedResources);     

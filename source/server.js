@@ -2,9 +2,8 @@
 const express = require("express");
 const app = express();
 
-const jsdom = require("jsdom");
 const fs = require("fs-extra");
-const jquery = require("jquery");
+const cheerio = require("cheerio");
 const path = require("path").posix;
 const os = require("os");
 
@@ -49,10 +48,9 @@ app.get("/lkp/*", function(req, res) {
 
 // requested path not in public folder or /lkp
 app.get("/*", function (req, res) {
-    var dom = new jsdom.JSDOM(fs.readFileSync(__dirname + "/private/page_not_found.html"), {runScripts: "dangerously"});    
-    var $ = jquery(dom.window);
+    var $ = cheerio.load(fs.readFileSync(__dirname + "/private/page_not_found.html"), { decodeEntities: false });
     $("#path").html(req.path);
-    res.status(404).send(dom.serialize());
+    res.status(404).send($.html());
 });
 
 
