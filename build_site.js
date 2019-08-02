@@ -3,8 +3,6 @@ const perf = require("perf_hooks").performance;
 var t0 = perf.now();
 
 const path = require("path").posix;
-const jsdom = require("jsdom");
-const jquery = require("jquery");
 const cheerio = require("cheerio");
 const fs = require("fs-extra");
 const crypto = require("crypto");
