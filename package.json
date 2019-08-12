@@ -2,7 +2,7 @@
   "name": "eerolwebpage",
   "version": "1.0.0",
   "description": "Runs personal website and some lentokonepeli queries",
-  "main": "server.js",
+  "main": "build/server.js",
   "dependencies": {
     "cheerio": "^1.0.0-rc.3",
     "express": "^4.17.1",
@@ -14,10 +14,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://vgp117@bitbucket.org/vgp117/eerolwebpage.git"
+    "url": "https://github.com/VirusVirus99/eerolwebpage"
   },
   "author": "Eero Lehtinen",
   "license": "ISC",
-  "homepage": "https://bitbucket.org/vgp117/eerolwebpage#readme",
   "keywords": []
 }
