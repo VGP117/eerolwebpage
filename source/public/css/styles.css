@@ -58,8 +58,6 @@ body.dark {
 
 #topNav > a:first-child {
     margin-right: auto;
-    font-size: 30px;
-    padding: 1px 14px;
 }
 
 #topNav > a:hover {
@@ -463,10 +461,6 @@ div#imageViewer img{
     #topNav > a {
         font-size: 28px;
         padding: 12px 28px;
-    }
-    #topNav > a:first-child {
-        font-size: 38px;
-        padding: 7px 28px;
     }
 
     footer {
