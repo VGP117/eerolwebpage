@@ -383,14 +383,37 @@ a.email {
 	position: relative;
 }
 
-a#github {
-	background-image: url(../images/github-mark-64px.png);
+a.logobutton {
 	background-size: 32px 32px;
 	width: 32px;
 	height: 32px;
 	margin-left: 6px;
 	display: inline-block;
 	text-indent: -9999px;
+}
+
+a.logobutton:hover {
+	opacity: 0.47;
+}
+
+a.logobutton:active {
+	opacity: 0.22;
+}
+
+a.logobutton.github {
+	background-image: url(../images/github-logo-64px.png);
+}
+
+.dark a.logobutton.github {
+	background-image: url(../images/github-logo-light-64px.png);
+}
+
+a.logobutton.linkedin {
+	background-image: url(../images/linkedin-logo.png);
+}
+
+.dark a.logobutton.linkedin {
+	background-image: url(../images/linkedin-logo-light.png);
 }
 
 div.horiz-flex {
@@ -400,24 +423,16 @@ div.horiz-flex {
 	align-items: center;
 }
 
+div.horiz-flex > a {
+	margin: 2px 8px;
+}
+
 .vl {
 	border-left-width: 2px;
 	border-left-style: solid;
 	border-left-color: var(--text-color);
 	height: 32px;
 	margin: 0px 10px;
-}
-
-a#github:hover {
-	opacity: 0.47;
-}
-
-a#github:active {
-	opacity: 0.22;
-}
-
-.dark a#github {
-	background-image: url(../images/github-mark-light-64px.png);
 }
 
 .floatClear:before,
