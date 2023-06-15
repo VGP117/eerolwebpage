@@ -1,3 +1,3 @@
-# Personal web page of Eero Lehtinen
+# My Personal Web Page
 
-My simple website currently hosted on [https://eerolehtinen.fi](https://eerolehtinen.fi).
+Currently hosted on [https://eerolehtinen.fi](https://eerolehtinen.fi).
