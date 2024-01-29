@@ -1,163 +1,185 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<title>Eero Lehtinen - Computer programmer</title>
-		<meta name="theme-color" content="#6a5acd" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1, maximum-scale=10, minimum-scale=1, user-scalable=yes"
-		/>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Home page of computer programmer Eero Lehtinen." />
-		<meta name="author" content="Eero Lehtinen" />
-		<meta name="keywords" content="lentokonepeli, ohjelmoija" />
-		<link rel="shortcut icon" href="images/icon.png" />
-		<link rel="stylesheet" href="css/styles.css" />
-		<script defer src="js/lights.js"></script>
-	</head>
+<!doctype html>
+<html lang="en" class="bg-gray-50">
+  <head>
+    <title>Eero Lehtinen - Computer programmer</title>
+    <meta name="theme-color" content="#6a5acd" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=10, minimum-scale=1, user-scalable=yes"
+    />
+    <meta charset="UTF-8" />
+    <meta
+      name="description"
+      content="Home page of computer programmer Eero Lehtinen."
+    />
+    <meta name="author" content="Eero Lehtinen" />
+    <meta name="keywords" content="" />
+    <link rel="shortcut icon" href="images/icon.png" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script defer src="js/lights.js"></script>
+  </head>
 
-	<body class="dark">
-		<main id="content">
-			<section id="landing">
-				<h1>Eero Lehtinen</h1>
-				<div class="horiz-flex">
-					<a id="email" href="mailto:eero@eerolehtinen.fi" class="email hasIcon">
-						eero@eerolehtinen.fi
-					</a>
-					<div class="vl"></div>
-					<a class="logobutton github" href="https://github.com/eero-lehtinen" title="GitHub"
-						>GitHub</a
-					>
-					<a
-						class="logobutton linkedin"
-						href="https://www.linkedin.com/in/eero-lehtinen/"
-						title="LinkedIn"
-						>LinkedIn</a
-					>
-				</div>
-				<h3>I'm most familiar with:</h3>
-				<p><em>JavaScript, TypeScript, React, Python, C++, Java, Haskell, NoSQL and SQL</em></p>
-				<p>and eager to learn more!</p>
-			</section>
+  <body class="max-w-[700px] mx-auto">
+    <main class="flex flex-col p-4 gap-12">
+      <section class="flex flex-col items-center gap-4">
+        <h1 class="text-6xl font-bold m-3">Eero Lehtinen</h1>
+        <div class="flex items-center gap-1">
+          <img
+            src="images/ic_mail_outline_black_24pt_2x.png"
+            alt="Email"
+            class="max-h-5 mt-0.5"
+          />
+          <a href="mailto:eero@eerolehtinen.fi"> eero@eerolehtinen.fi </a>
+        </div>
+        <div class="flex gap-4">
+          <div class="flex items-center gap-1">
+            <img
+              src="images/github-logo-64px.png"
+              alt="Github"
+              class="max-h-5 mt-0.5"
+            />
+            <a href="https://github.com/eero-lehtinen">Github</a>
+          </div>
+          <div class="flex items-center gap-1">
+            <img
+              src="images/linkedin-logo.png"
+              alt="LinkedIn"
+              class="max-h-5 mt-0.5"
+            />
+            <a href="https://www.linkedin.com/in/eero-lehtinen/">LinkedIn</a>
+          </div>
+        </div>
+      </section>
 
-			<section>
-				<h2 id="Experience">Work experience</h2>
-				<ul id="expList">
-					<li>
-						<h2>The Finnish Defence Forces (Aug 2018 - Mar 2019)</h2>
-						<h3>Virtuaalikoulutushenkilö - Training Simulator Developer</h3>
-						<p>
-							Learned Blender and made combat vehicle 3D-models. Configured and debugged the
-							models to function within the simulator. Wrote scripts to create additional
-							functionality not included in-engine. Held training sessions with our team for
-							conscripts.
-							<a href="images/defence-forces-certificate.png">View work certificate</a>
-						</p>
-					</li>
-				</ul>
-			</section>
-			<section>
-				<h2 id="Projects">Personal projects</h2>
-				<ul id="projectList">
-					<li>
-						<a href="https://github.com/eero-lehtinen/dawdle-block">
-							<img
-								width="64"
-								height="64"
-								class="thumbnail"
-								src="images/dawdle_block_thumb.png"
-								alt="Dawdle block thumbnail"
-							/>
-							<div class="flex-column">
-								<span class="listItemTitle">Dawdle Block</span>
-								<div class="tagList">
-									<div class="tag">Browser extension</div>
-									<div class="tag">Preact</div>
-									<div class="tag">TypeScript</div>
-									<div class="tag">Jest</div>
-									<div class="tag">Material-UI</div>
-									<div class="tag">Webpack</div>
-								</div>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="https://github.com/eero-lehtinen/lentokonepeli-x">
-							<img
-								width="64"
-								height="64"
-								class="thumbnail"
-								src="images/lentokonepeli-x_thumb.png"
-								alt="Lentokonepeli-X thumbnail"
-							/>
-							<div class="flex-column">
-								<span class="listItemTitle">Lentokonepeli-X</span>
-								<div class="tagList">
-									<div class="tag">Game</div>
-									<div class="tag">Multiplayer</div>
-									<div class="tag">Windows</div>
-									<div class="tag">C++</div>
-									<div class="tag">Networking</div>
-								</div>
-							</div>
-						</a>
-					</li>
-					<li>
-						<a href="https://github.com/eero-lehtinen/swag-man">
-							<img
-								width="64"
-								height="64"
-								class="thumbnail"
-								src="images/swag-man_upscale_thumb.png"
-								alt="Swag-man thumbnail"
-							/>
-							<div class="flex-column">
-								<span class="listItemTitle">Swag-Man</span>
-								<div class="tagList">
-									<div class="tag">Game</div>
-									<div class="tag">Singleplayer</div>
-									<div class="tag">Multiplatform</div>
-									<div class="tag">Java</div>
-								</div>
-							</div>
-						</a>
-					</li>
-					<!-- TODO: setup proper repository instead of linking straight to google play store -->
-					<li>
-						<a
-							href="https://play.google.com/store/apps/details?id=com.SGNG.TheBouncingBall&hl=en&gl=US"
-						>
-							<img
-								width="64"
-								height="64"
-								class="thumbnail"
-								src="images/thebouncingball_thumb.png"
-								alt="TheBouncingBall thumbnail"
-							/>
-							<div class="flex-column">
-								<span class="listItemTitle">TheBouncingBall</span>
-								<div class="tagList">
-									<div class="tag">Game</div>
-									<div class="tag">Singleplayer</div>
-									<div class="tag">Android</div>
-									<div class="tag">Unity</div>
-									<div class="tag">UnityScript</div>
-									<div class="tag">C#</div>
-								</div>
-							</div>
-						</a>
-					</li>
-				</ul>
-			</section>
-		</main>
-		<footer>
-			<a class="credit" href="/">by Eero Lehtinen</a>
-			<a
-				id="lightsToggle"
-				href="javascript:void(0)"
-				onclick="toggleLights()"
-				title="Switch theme"
-			></a>
-		</footer>
-	</body>
+      <section class="flex flex-col max-w-full items-stretch">
+        <h2 class="text-4xl font-semibold m-4 mx-auto">Projects</h2>
+        <div class="flex flex-col gap-2">
+          <a
+            href="https://github.com/eero-lehtinen/dawdle-block"
+            class="flex gap-2 rounded-lg p-2 hover:bg-gray-200"
+          >
+            <img
+              class="size-16"
+              src="images/dawdle_block_thumb.png"
+              alt="Dawdle block thumbnail"
+            />
+            <div>
+              <h3 class="text-2xl font-semibold">Dawdle Block</h3>
+              <div class="flex flex-wrap gap-1">
+                <div class="rounded border-2 border-gray-300 px-1 py-0">
+                  Browser extension
+                </div>
+                <div class="rounded border-2 border-gray-300 px-1 py-0">
+                  Preact
+                </div>
+                <div class="rounded border-2 border-gray-300 px-1 py-0">
+                  TypeScript
+                </div>
+                <div class="rounded border-2 border-gray-300 px-1 py-0">
+                  Jest
+                </div>
+                <div class="rounded border-2 border-gray-300 px-1 py-0">
+                  Material-UI
+                </div>
+                <div class="rounded border-2 border-gray-300 px-1 py-0">
+                  Webpack
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://github.com/eero-lehtinen/lentokonepeli-x"
+            class="flex gap-2 rounded-lg p-2 hover:bg-gray-200"
+          >
+            <img
+              class="size-16"
+              src="images/lentokonepeli-x_thumb.png"
+              alt="Lentokonepeli-X thumbnail"
+            />
+            <div>
+              <h3 class="text-2xl font-semibold">Lentokonepeli-X</h3>
+              <div class="flex flex-wrap gap-1">
+                <div class="rounded border-2 border-gray-300 px-1 py-0">
+                  Game
+                </div>
+                <div class="rounded border-2 border-gray-300 px-1 py-0">
+                  Multiplayer
+                </div>
+                <div class="rounded border-2 border-gray-300 px-1 py-0">
+                  Windows
+                </div>
+                <div class="rounded border-2 border-gray-300 px-1 py-0">
+                  C++
+                </div>
+                <div class="rounded border-2 border-gray-300 px-1 py-0">
+                  Networking
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://github.com/eero-lehtinen/swag-man"
+            class="flex gap-2 rounded-lg p-2 hover:bg-gray-200"
+          >
+            <img
+              class="size-16"
+              src="images/swag-man_upscale_thumb.png"
+              alt="Swag-man thumbnail"
+            />
+            <div>
+              <h3 class="text-2xl font-semibold">Swag-Man</h3>
+              <div class="flex flex-wrap gap-1">
+                <div class="rounded border-2 border-gray-300 px-1 py-0">
+                  Game
+                </div>
+                <div class="rounded border-2 border-gray-300 px-1 py-0">
+                  Singleplayer
+                </div>
+                <div class="rounded border-2 border-gray-300 px-1 py-0">
+                  Multiplatform
+                </div>
+                <div class="rounded border-2 border-gray-300 px-1 py-0">
+                  Java
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <a
+            href="https://play.google.com/store/apps/details?id=com.SGNG.TheBouncingBall&hl=en&gl=US"
+            class="flex gap-2 rounded-lg p-2 hover:bg-gray-200"
+          >
+            <img
+              class="size-16"
+              src="images/thebouncingball_thumb.png"
+              alt="TheBouncingBall thumbnail"
+            />
+            <div>
+              <h3 class="text-2xl font-semibold">TheBouncingBall</h3>
+              <div class="flex flex-wrap gap-1">
+                <div class="rounded border-2 border-gray-300 px-1 py-0">
+                  Game
+                </div>
+                <div class="rounded border-2 border-gray-300 px-1 py-0">
+                  Singleplayer
+                </div>
+                <div class="rounded border-2 border-gray-300 px-1 py-0">
+                  Android
+                </div>
+                <div class="rounded border-2 border-gray-300 px-1 py-0">
+                  Unity
+                </div>
+                <div class="rounded border-2 border-gray-300 px-1 py-0">
+                  UnityScript
+                </div>
+                <div class="rounded border-2 border-gray-300 px-1 py-0">C#</div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

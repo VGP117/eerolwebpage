@@ -1,0 +1,17 @@
+{
+  "name": "eerolehtinen.fi",
+  "version": "1.0.0",
+  "description": "Currently hosted on [https://eerolehtinen.fi](https://eerolehtinen.fi).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently --kill-others \"live-server --wait=300\" \"tailwindcss -i ./css/styles-in.css  -o ./css/styles.css --watch\""
+  },
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "live-server": "^1.2.2",
+    "tailwindcss": "^3.4.1"
+  }
+}
