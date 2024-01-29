@@ -611,10 +611,6 @@ video {
   max-width: 100%;
 }
 
-.max-w-\[720px\] {
-  max-width: 720px;
-}
-
 .flex-col {
   flex-direction: column;
 }
@@ -671,10 +667,6 @@ video {
 .bg-gray-50 {
   --tw-bg-opacity: 1;
   background-color: rgb(249 250 251 / var(--tw-bg-opacity));
-}
-
-.p-1 {
-  padding: 0.25rem;
 }
 
 .p-4 {
