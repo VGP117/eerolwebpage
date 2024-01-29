@@ -599,6 +599,10 @@ video {
   max-height: 1.25rem;
 }
 
+.w-0 {
+  width: 0px;
+}
+
 .max-w-\[1280px\] {
   max-width: 1280px;
 }
