@@ -1,6 +1,5 @@
 <script lang="ts">
 	import matopeliVideo from '$lib/images/matopeli.mp4';
-	// import { base } from '$app/paths';
 </script>
 
 <svelte:head>
