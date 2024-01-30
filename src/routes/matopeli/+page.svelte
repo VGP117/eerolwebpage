@@ -17,7 +17,6 @@
 		</p>
 		<p class="mb-4">Will be coming to PC, Android and iOS. At some point.</p>
 	</section>
-	<video src={matopeliVideo} width="1280" height="720" controls autoplay loop>
-		<track kind="captions" />
+	<video src={matopeliVideo} width="1280" height="720" controls autoplay loop muted>
 	</video>
 </main>
