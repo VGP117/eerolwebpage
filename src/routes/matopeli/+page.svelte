@@ -8,7 +8,7 @@
 </svelte:head>
 
 <main class="mx-auto flex min-w-0 max-w-[1280px] flex-col gap-2 p-4">
-	<a href="./" class="text-blue-500 hover:underline">Back</a>
+	<a href="./" class="text-blue-600 hover:underline text-lg">Back</a>
 	<section>
 		<h1 class="my-4 text-3xl font-semibold">Matopeli</h1>
 		<p class="mb-4 max-w-[700px]">
