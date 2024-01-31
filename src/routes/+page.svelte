@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import LandingHeading from './LandingHeading.svelte';
 	import Projects from './Projects.svelte';
 </script>
