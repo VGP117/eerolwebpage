@@ -5,7 +5,7 @@
 
 <svelte:head>
 	<title>Home</title>
-	<meta name="description" content="The home page of computer programmer Eero Lehtinen" />
+	<meta name="description" content="Eero Lehtinen - Software Developer - Home Page" />
 </svelte:head>
 
 <main class="flex flex-col gap-10">
