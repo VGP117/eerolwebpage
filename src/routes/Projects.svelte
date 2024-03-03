@@ -48,13 +48,13 @@
 	<h2 class="m-4 mx-auto text-4xl font-semibold">Projects</h2>
 	<div class="flex flex-col gap-2">
 		{#each projects as project}
-			<a href={project.href} class="flex gap-4 rounded-lg p-5 hover:bg-gray-200">
+			<a href={project.href} class="flex gap-4 rounded-lg p-5 hover:bg-gray-300">
 				<img class="size-16 rounded-lg" src={project.thumb} alt={`${project.name} thumbnail`} />
 				<div class="flex flex-col justify-between">
 					<h3 class="text-2xl font-semibold">{project.name}</h3>
 					<div class="flex flex-wrap gap-1">
 						{#each project.tags as tag}
-							<div class="rounded border-2 border-gray-300 px-1 py-0">{tag}</div>
+							<div class="rounded border-2 border-gray-400 px-1 py-0">{tag}</div>
 						{/each}
 					</div>
 				</div>
