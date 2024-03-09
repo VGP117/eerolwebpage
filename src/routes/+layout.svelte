@@ -1,5 +1,5 @@
 <script lang="ts">
-	import '../app.css';
+	import "../app.css"
 </script>
 
 <div class="app p-4">

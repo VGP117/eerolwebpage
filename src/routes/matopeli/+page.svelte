@@ -1,5 +1,5 @@
 <script lang="ts">
-	import matopeliVideo from '$lib/images/matopeli.mp4';
+	import matopeliVideo from "$lib/images/matopeli.mp4"
 </script>
 
 <svelte:head>
@@ -12,11 +12,19 @@
 	<section>
 		<h1 class="my-4 text-3xl font-semibold">Matopeli</h1>
 		<p class="mb-4 max-w-[700px]">
-			Matopeli is a twin-stick horde survival multiplayer shooter where you play as a centipede. You
-			have lots of hands so why not use them?
+			Matopeli is a twin-stick horde survival multiplayer shooter where you play
+			as a centipede. You have lots of hands so why not use them?
 		</p>
 		<p class="mb-4">Will be coming to PC, Android and iOS. At some point.</p>
 	</section>
-	<video src={matopeliVideo} width="1280" height="720" controls autoplay loop muted>
+	<video
+		src={matopeliVideo}
+		width="1280"
+		height="720"
+		controls
+		autoplay
+		loop
+		muted
+	>
 	</video>
 </main>
