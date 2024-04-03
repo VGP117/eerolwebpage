@@ -45,7 +45,7 @@
 		{
 			name: "TheBouncingBall",
 			thumb: theBouncingBallThumb,
-			href: "https://play.google.com/store/apps/details?id=com.SGNG.TheBouncingBall&hl=en&gl=US",
+			href: "https://web.archive.org/web/20240106202613/https://play.google.com/store/apps/details?id=com.SGNG.TheBouncingBall&hl=en&gl=US",
 			tags: ["Game", "Unity", "UnityScript", "C#", "Android", "Singleplayer"],
 		},
 	]
